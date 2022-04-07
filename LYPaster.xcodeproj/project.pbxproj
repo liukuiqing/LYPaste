@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8728E4E227FEE95600F7EA1B /* LYPasteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8728E4E127FEE95600F7EA1B /* LYPasteApp.swift */; };
-		8728E4E427FEE95600F7EA1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8728E4E327FEE95600F7EA1B /* ContentView.swift */; };
-		8728E4E627FEE95800F7EA1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8728E4E527FEE95800F7EA1B /* Assets.xcassets */; };
-		8728E4E927FEE95800F7EA1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8728E4E827FEE95800F7EA1B /* Preview Assets.xcassets */; };
+		87B96D2B27FEEDBC000E44C0 /* LYPasterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B96D2A27FEEDBC000E44C0 /* LYPasterApp.swift */; };
+		87B96D2D27FEEDBC000E44C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B96D2C27FEEDBC000E44C0 /* ContentView.swift */; };
+		87B96D2F27FEEDBD000E44C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B96D2E27FEEDBD000E44C0 /* Assets.xcassets */; };
+		87B96D3227FEEDBD000E44C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B96D3127FEEDBD000E44C0 /* Preview Assets.xcassets */; };
+		87B96D3C27FEEE13000E44C0 /* LYPasterMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B96D3A27FEEE13000E44C0 /* LYPasterMonitor.swift */; };
+		87B96D3D27FEEE13000E44C0 /* LYPasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B96D3B27FEEE13000E44C0 /* LYPasterData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8728E4DE27FEE95600F7EA1B /* LYPaste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPaste.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		8728E4E127FEE95600F7EA1B /* LYPasteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasteApp.swift; sourceTree = "<group>"; };
-		8728E4E327FEE95600F7EA1B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8728E4E527FEE95800F7EA1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8728E4E827FEE95800F7EA1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		8728E4EA27FEE95800F7EA1B /* LYPaste.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LYPaste.entitlements; sourceTree = "<group>"; };
+		87B96D2727FEEDBC000E44C0 /* LYPaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87B96D2A27FEEDBC000E44C0 /* LYPasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasterApp.swift; sourceTree = "<group>"; };
+		87B96D2C27FEEDBC000E44C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		87B96D2E27FEEDBD000E44C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		87B96D3127FEEDBD000E44C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		87B96D3327FEEDBD000E44C0 /* LYPaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LYPaster.entitlements; sourceTree = "<group>"; };
+		87B96D3A27FEEE13000E44C0 /* LYPasterMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPasterMonitor.swift; sourceTree = "<group>"; };
+		87B96D3B27FEEE13000E44C0 /* LYPasterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPasterData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8728E4DB27FEE95600F7EA1B /* Frameworks */ = {
+		87B96D2427FEEDBC000E44C0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,78 +37,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8728E4D527FEE95600F7EA1B = {
+		87B96D1E27FEEDBC000E44C0 = {
 			isa = PBXGroup;
 			children = (
-				8728E4E027FEE95600F7EA1B /* LYPaste */,
-				8728E4DF27FEE95600F7EA1B /* Products */,
+				87B96D2927FEEDBC000E44C0 /* LYPaster */,
+				87B96D2827FEEDBC000E44C0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		8728E4DF27FEE95600F7EA1B /* Products */ = {
+		87B96D2827FEEDBC000E44C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8728E4DE27FEE95600F7EA1B /* LYPaste.app */,
+				87B96D2727FEEDBC000E44C0 /* LYPaster.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8728E4E027FEE95600F7EA1B /* LYPaste */ = {
+		87B96D2927FEEDBC000E44C0 /* LYPaster */ = {
 			isa = PBXGroup;
 			children = (
-				8728E4E127FEE95600F7EA1B /* LYPasteApp.swift */,
-				8728E4E327FEE95600F7EA1B /* ContentView.swift */,
-				8728E4E527FEE95800F7EA1B /* Assets.xcassets */,
-				8728E4EA27FEE95800F7EA1B /* LYPaste.entitlements */,
-				8728E4E727FEE95800F7EA1B /* Preview Content */,
+				87B96D3927FEEE13000E44C0 /* Util */,
+				87B96D2A27FEEDBC000E44C0 /* LYPasterApp.swift */,
+				87B96D2C27FEEDBC000E44C0 /* ContentView.swift */,
+				87B96D2E27FEEDBD000E44C0 /* Assets.xcassets */,
+				87B96D3327FEEDBD000E44C0 /* LYPaster.entitlements */,
+				87B96D3027FEEDBD000E44C0 /* Preview Content */,
 			);
-			path = LYPaste;
+			path = LYPaster;
 			sourceTree = "<group>";
 		};
-		8728E4E727FEE95800F7EA1B /* Preview Content */ = {
+		87B96D3027FEEDBD000E44C0 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				8728E4E827FEE95800F7EA1B /* Preview Assets.xcassets */,
+				87B96D3127FEEDBD000E44C0 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		87B96D3927FEEE13000E44C0 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				87B96D3A27FEEE13000E44C0 /* LYPasterMonitor.swift */,
+				87B96D3B27FEEE13000E44C0 /* LYPasterData.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8728E4DD27FEE95600F7EA1B /* LYPaste */ = {
+		87B96D2627FEEDBC000E44C0 /* LYPaster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8728E4ED27FEE95800F7EA1B /* Build configuration list for PBXNativeTarget "LYPaste" */;
+			buildConfigurationList = 87B96D3627FEEDBD000E44C0 /* Build configuration list for PBXNativeTarget "LYPaster" */;
 			buildPhases = (
-				8728E4DA27FEE95600F7EA1B /* Sources */,
-				8728E4DB27FEE95600F7EA1B /* Frameworks */,
-				8728E4DC27FEE95600F7EA1B /* Resources */,
+				87B96D2327FEEDBC000E44C0 /* Sources */,
+				87B96D2427FEEDBC000E44C0 /* Frameworks */,
+				87B96D2527FEEDBC000E44C0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = LYPaste;
-			productName = LYPaste;
-			productReference = 8728E4DE27FEE95600F7EA1B /* LYPaste.app */;
+			name = LYPaster;
+			productName = LYPaster;
+			productReference = 87B96D2727FEEDBC000E44C0 /* LYPaster.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		8728E4D627FEE95600F7EA1B /* Project object */ = {
+		87B96D1F27FEEDBC000E44C0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					8728E4DD27FEE95600F7EA1B = {
+					87B96D2627FEEDBC000E44C0 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 8728E4D927FEE95600F7EA1B /* Build configuration list for PBXProject "LYPaste" */;
+			buildConfigurationList = 87B96D2227FEEDBC000E44C0 /* Build configuration list for PBXProject "LYPaster" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,42 +126,44 @@
 				en,
 				Base,
 			);
-			mainGroup = 8728E4D527FEE95600F7EA1B;
-			productRefGroup = 8728E4DF27FEE95600F7EA1B /* Products */;
+			mainGroup = 87B96D1E27FEEDBC000E44C0;
+			productRefGroup = 87B96D2827FEEDBC000E44C0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8728E4DD27FEE95600F7EA1B /* LYPaste */,
+				87B96D2627FEEDBC000E44C0 /* LYPaster */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8728E4DC27FEE95600F7EA1B /* Resources */ = {
+		87B96D2527FEEDBC000E44C0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8728E4E927FEE95800F7EA1B /* Preview Assets.xcassets in Resources */,
-				8728E4E627FEE95800F7EA1B /* Assets.xcassets in Resources */,
+				87B96D3227FEEDBD000E44C0 /* Preview Assets.xcassets in Resources */,
+				87B96D2F27FEEDBD000E44C0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		8728E4DA27FEE95600F7EA1B /* Sources */ = {
+		87B96D2327FEEDBC000E44C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8728E4E427FEE95600F7EA1B /* ContentView.swift in Sources */,
-				8728E4E227FEE95600F7EA1B /* LYPasteApp.swift in Sources */,
+				87B96D2D27FEEDBC000E44C0 /* ContentView.swift in Sources */,
+				87B96D2B27FEEDBC000E44C0 /* LYPasterApp.swift in Sources */,
+				87B96D3C27FEEE13000E44C0 /* LYPasterMonitor.swift in Sources */,
+				87B96D3D27FEEE13000E44C0 /* LYPasterData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		8728E4EB27FEE95800F7EA1B /* Debug */ = {
+		87B96D3427FEEDBD000E44C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,7 +224,7 @@
 			};
 			name = Debug;
 		};
-		8728E4EC27FEE95800F7EA1B /* Release */ = {
+		87B96D3527FEEDBD000E44C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,16 +278,16 @@
 			};
 			name = Release;
 		};
-		8728E4EE27FEE95800F7EA1B /* Debug */ = {
+		87B96D3727FEEDBD000E44C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LYPaste/LYPaste.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LYPaster/LYPaster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LYPaste/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LYPaster/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -280,23 +296,23 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dyedu.LYPaste;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyedu.LYPaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		8728E4EF27FEE95800F7EA1B /* Release */ = {
+		87B96D3827FEEDBD000E44C0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LYPaste/LYPaste.entitlements;
+				CODE_SIGN_ENTITLEMENTS = LYPaster/LYPaster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LYPaste/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LYPaster/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -305,7 +321,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.dyedu.LYPaste;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyedu.LYPaster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -315,25 +331,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8728E4D927FEE95600F7EA1B /* Build configuration list for PBXProject "LYPaste" */ = {
+		87B96D2227FEEDBC000E44C0 /* Build configuration list for PBXProject "LYPaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8728E4EB27FEE95800F7EA1B /* Debug */,
-				8728E4EC27FEE95800F7EA1B /* Release */,
+				87B96D3427FEEDBD000E44C0 /* Debug */,
+				87B96D3527FEEDBD000E44C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8728E4ED27FEE95800F7EA1B /* Build configuration list for PBXNativeTarget "LYPaste" */ = {
+		87B96D3627FEEDBD000E44C0 /* Build configuration list for PBXNativeTarget "LYPaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8728E4EE27FEE95800F7EA1B /* Debug */,
-				8728E4EF27FEE95800F7EA1B /* Release */,
+				87B96D3727FEEDBD000E44C0 /* Debug */,
+				87B96D3827FEEDBD000E44C0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 8728E4D627FEE95600F7EA1B /* Project object */;
+	rootObject = 87B96D1F27FEEDBC000E44C0 /* Project object */;
 }
