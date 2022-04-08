@@ -420,7 +420,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 
 
-## WCDB
+## WCDB.swift
 
 Tencent is pleased to support the open source community by making WCDB available.  
 
