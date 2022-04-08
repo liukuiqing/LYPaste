@@ -6,7 +6,7 @@
 //
 
 import Cocoa
+import WCDB
 
 class LYPasterData: NSObject {
-
 }

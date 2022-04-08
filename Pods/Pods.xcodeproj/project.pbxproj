@@ -14,13 +14,13 @@
 
 /* Begin PBXFileReference section */
 		1E51B774956B8F8C7DE808F9F7E4812D /* Pods-LYPaster-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LYPaster-acknowledgements.plist"; sourceTree = "<group>"; };
-		413292A40F77B08D46E3195E3AAE4915 /* Pods-LYPaster */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-LYPaster"; path = Pods_LYPaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		413292A40F77B08D46E3195E3AAE4915 /* Pods_LYPaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYPaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E5483CC4EF98C87545F230FB14F9D30 /* Pods-LYPaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LYPaster.modulemap"; sourceTree = "<group>"; };
 		7F11FDF09B753726E3741BED35F4F1DB /* Pods-LYPaster-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LYPaster-acknowledgements.markdown"; sourceTree = "<group>"; };
 		81D3BB4BBDBD3AC9987A3BDF563B7433 /* Pods-LYPaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LYPaster-dummy.m"; sourceTree = "<group>"; };
 		901BD1E0D2D36B6BAB41C544A1B60E02 /* Pods-LYPaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LYPaster.debug.xcconfig"; sourceTree = "<group>"; };
 		96F700D61CF7AF672DF6AF9958108E87 /* Pods-LYPaster-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LYPaster-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BCF0F1C7A0B9D258766AB60C703445EA /* Pods-LYPaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LYPaster.release.xcconfig"; sourceTree = "<group>"; };
 		C1430F003D39D9906881A6AC724B7931 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		E77AB2341E9F2B9D9E1B3C02F5353ED3 /* Pods-LYPaster-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LYPaster-Info.plist"; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 		1A502D57063D515C1DE3BD1215893758 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				413292A40F77B08D46E3195E3AAE4915 /* Pods-LYPaster */,
+				413292A40F77B08D46E3195E3AAE4915 /* Pods_LYPaster.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,7 +125,7 @@
 			);
 			name = "Pods-LYPaster";
 			productName = Pods_LYPaster;
-			productReference = 413292A40F77B08D46E3195E3AAE4915 /* Pods-LYPaster */;
+			productReference = 413292A40F77B08D46E3195E3AAE4915 /* Pods_LYPaster.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */

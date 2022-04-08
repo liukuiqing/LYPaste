@@ -6,5 +6,5 @@ target 'LYPaster' do
   use_frameworks!
 
   # Pods for LYPaster
-
+  pod 'WCDB'
 end
