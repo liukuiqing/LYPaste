@@ -6,7 +6,18 @@
 //
 
 import Cocoa
-import WCDB
+//import WCDB
 
 class LYPasterData: NSObject {
+    static let instance = LYPasterData()
+    
+    private override init() {}
+    
+    override func copy() -> Any {
+        return self
+    }
+    
+    override func mutableCopy() -> Any {
+        return self
+    }
 }
