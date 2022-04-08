@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    let pp = LYPasterMonitor.shareInstance()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack(spacing: 10) {
+            Text("Hello, world!")
+                .padding()
+            Button.init("btn") {
+//                print(LYPasterMonitor.shareInstance().pasterList())
+            }.foregroundColor(Color.red)
+        }
     }
 }
 
