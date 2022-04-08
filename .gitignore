@@ -1,0 +1,48 @@
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+address.txt
+methods_symbols
+
+Coding_iOS/Coding_iOS-Prefix.pch
+.DS_Store
+
+*.xcuserdatad/
+#pythonRs/
+#namiboxApp/namiboxApp.xcodeproj/
+*.patch
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
+#
+.idea/
+*.xcbkptlist
+!Pods-PrincipalAssist-resources.sh
+
+npm-debug.log
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the 
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+#     https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
+
