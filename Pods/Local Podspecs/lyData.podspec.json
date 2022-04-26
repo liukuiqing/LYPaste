@@ -1,0 +1,35 @@
+{
+  "name": "lyData",
+  "version": "1.0",
+  "homepage": "https://git.namibox.com/app/ios_workspace",
+  "authors": {
+    "base": "liukuiqing"
+  },
+  "summary": "悦读阅读器",
+  "platforms": {
+    "osx": "11"
+  },
+  "source": {
+    "path": "./LocalPods/lyData"
+  },
+  "source_files": "**/*.swift",
+  "module_name": "lyData",
+  "requires_arc": true,
+  "pod_target_xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "SQLITE_HAS_CODEC WCDB_BUILTIN_SQLCIPHER",
+    "SWIFT_WHOLE_MODULE_OPTIMIZATION": "YES",
+    "APPLICATION_EXTENSION_API_ONLY": "YES",
+    "HEADER_SEARCH_PATHS": "${PODS_ROOT}/lyData",
+    "LIBRARY_SEARCH_PATHS[sdk=macosx*]": "$(SDKROOT)/usr/lib/system",
+    "OTHER_SWIFT_FLAGS[config=Release][sdk=iphonesimulator*]": "-D WCDB_IOS",
+    "OTHER_SWIFT_FLAGS[config=Release][sdk=iphoneos*]": "-D lyData_IOS",
+    "OTHER_SWIFT_FLAGS[config=Debug]": "-D DEBUG",
+    "OTHER_SWIFT_FLAGS[config=Debug][sdk=iphonesimulator*]": "-D lyData_IOS -D DEBUG",
+    "OTHER_SWIFT_FLAGS[config=Debug][sdk=iphoneos*]": "-D lyData_IOS -D DEBUG"
+  },
+  "dependencies": {
+    "WCDB.swift": [
+
+    ]
+  }
+}

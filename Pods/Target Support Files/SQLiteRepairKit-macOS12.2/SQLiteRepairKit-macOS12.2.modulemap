@@ -1,6 +1,0 @@
-framework module sqliterk {
-  umbrella header "SQLiteRepairKit-macOS12.2-umbrella.h"
-
-  export *
-  module * { export * }
-}

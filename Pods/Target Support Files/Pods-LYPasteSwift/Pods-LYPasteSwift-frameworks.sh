@@ -176,14 +176,16 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/SQLiteRepairKit-macOS12.2/sqliterk.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/WCDB.swift-macOS12.2/WCDBSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher-macOS12.2/sqlcipher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/lyData/lyData.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/SQLiteRepairKit-macOS12.2/sqliterk.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/WCDB.swift-macOS12.2/WCDBSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher-macOS12.2/sqlcipher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/lyData/lyData.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

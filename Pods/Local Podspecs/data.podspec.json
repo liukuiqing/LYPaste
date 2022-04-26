@@ -7,17 +7,21 @@
   },
   "summary": "悦读阅读器",
   "platforms": {
-    "macOS": "9.0",
     "osx": "10.9"
   },
   "source": {
     "path": "./LocalPods/data"
   },
   "source_files": "**/*.swift",
+  "module_name": "data",
+  "requires_arc": true,
+  "pod_target_xcconfig": {
+    "SWIFT_WHOLE_MODULE_OPTIMIZATION": "YES",
+    "APPLICATION_EXTENSION_API_ONLY": "YES"
+  },
   "dependencies": {
     "WCDB.swift": [
 
     ]
-  },
-  "static_framework": true
+  }
 }

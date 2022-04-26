@@ -11,6 +11,7 @@
 		871D432D28179B310041CBC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D432C28179B310041CBC7 /* ViewController.swift */; };
 		871D432F28179B330041CBC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871D432E28179B330041CBC7 /* Assets.xcassets */; };
 		871D433228179B330041CBC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871D433028179B330041CBC7 /* Main.storyboard */; };
+		871D433E2817C7830041CBC7 /* base in Resources */ = {isa = PBXBuildFile; fileRef = 871D433D2817C7830041CBC7 /* base */; };
 		EC83BF63428F21CB626EAC2D /* Pods_LYPasteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		871D432E28179B330041CBC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		871D433128179B330041CBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		871D433328179B330041CBC7 /* LYPasteSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LYPasteSwift.entitlements; sourceTree = "<group>"; };
+		871D433D2817C7830041CBC7 /* base */ = {isa = PBXFileReference; lastKnownFileType = folder; path = base; sourceTree = "<group>"; };
 		A07E51B0C180BBBB2B9A0086 /* Pods-LYPasteSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.release.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.release.xcconfig"; sourceTree = "<group>"; };
 		BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYPasteSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8685E61835FF5B101900F8A /* Pods-LYPasteSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.debug.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 		871D432928179B310041CBC7 /* LYPasteSwift */ = {
 			isa = PBXGroup;
 			children = (
+				871D433D2817C7830041CBC7 /* base */,
 				871D432A28179B310041CBC7 /* AppDelegate.swift */,
 				871D432C28179B310041CBC7 /* ViewController.swift */,
 				871D432E28179B330041CBC7 /* Assets.xcassets */,
@@ -146,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871D433E2817C7830041CBC7 /* base in Resources */,
 				871D432F28179B330041CBC7 /* Assets.xcassets in Resources */,
 				871D433228179B330041CBC7 /* Main.storyboard in Resources */,
 			);
@@ -350,7 +354,9 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dyedu.LYPasteSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -376,6 +382,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dyedu.LYPasteSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
