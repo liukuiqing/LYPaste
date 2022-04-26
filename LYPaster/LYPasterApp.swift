@@ -11,7 +11,10 @@ import SwiftUI
 struct LYPasterApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().frame(width: 700, height: 500)
         }
     }
+//    func windowDidBecomeKey(_ notification:Notification){
+//        print(NSPasteboard.general.changeCount)
+//    }
 }

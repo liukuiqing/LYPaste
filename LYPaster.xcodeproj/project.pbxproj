@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		766256BB898310FE8DEF12BE /* Pods_LYPaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59E6046FAF92F523ECE90779 /* Pods_LYPaster.framework */; };
+		871D42E428162CEB0041CBC7 /* LYSUView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D42E328162CEB0041CBC7 /* LYSUView.swift */; };
+		871D42E62816406A0041CBC7 /* LYWCustomWebview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D42E52816406A0041CBC7 /* LYWCustomWebview.swift */; };
 		87B96D2B27FEEDBC000E44C0 /* LYPasterApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B96D2A27FEEDBC000E44C0 /* LYPasterApp.swift */; };
 		87B96D2D27FEEDBC000E44C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B96D2C27FEEDBC000E44C0 /* ContentView.swift */; };
 		87B96D2F27FEEDBD000E44C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B96D2E27FEEDBD000E44C0 /* Assets.xcassets */; };
 		87B96D3227FEEDBD000E44C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87B96D3127FEEDBD000E44C0 /* Preview Assets.xcassets */; };
 		87B96D3C27FEEE13000E44C0 /* LYPasterMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B96D3A27FEEE13000E44C0 /* LYPasterMonitor.swift */; };
 		87B96D3D27FEEE13000E44C0 /* LYPasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B96D3B27FEEE13000E44C0 /* LYPasterData.swift */; };
+		87B96D41280039DF000E44C0 /* LYWebview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B96D40280039DE000E44C0 /* LYWebview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		59E6046FAF92F523ECE90779 /* Pods_LYPaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYPaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6DE245D9217E17D7FC3348 /* Pods-LYPaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPaster.debug.xcconfig"; path = "Target Support Files/Pods-LYPaster/Pods-LYPaster.debug.xcconfig"; sourceTree = "<group>"; };
+		871D42E328162CEB0041CBC7 /* LYSUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSUView.swift; sourceTree = "<group>"; };
+		871D42E52816406A0041CBC7 /* LYWCustomWebview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWCustomWebview.swift; sourceTree = "<group>"; };
+		871D42EB281792390041CBC7 /* LYPasteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPasteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B96D2727FEEDBC000E44C0 /* LYPaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B96D2A27FEEDBC000E44C0 /* LYPasterApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasterApp.swift; sourceTree = "<group>"; };
 		87B96D2C27FEEDBC000E44C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,10 +33,18 @@
 		87B96D3327FEEDBD000E44C0 /* LYPaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LYPaster.entitlements; sourceTree = "<group>"; };
 		87B96D3A27FEEE13000E44C0 /* LYPasterMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPasterMonitor.swift; sourceTree = "<group>"; };
 		87B96D3B27FEEE13000E44C0 /* LYPasterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPasterData.swift; sourceTree = "<group>"; };
+		87B96D40280039DE000E44C0 /* LYWebview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWebview.swift; sourceTree = "<group>"; };
 		F27FCD65EFA48B9F99D53C74 /* Pods-LYPaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPaster.release.xcconfig"; path = "Target Support Files/Pods-LYPaster/Pods-LYPaster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		871D42E8281792390041CBC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87B96D2427FEEDBC000E44C0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -64,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				87B96D2727FEEDBC000E44C0 /* LYPaster.app */,
+				871D42EB281792390041CBC7 /* LYPasteSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +86,7 @@
 		87B96D2927FEEDBC000E44C0 /* LYPaster */ = {
 			isa = PBXGroup;
 			children = (
+				87B96D3E2800397B000E44C0 /* view */,
 				87B96D3927FEEE13000E44C0 /* Util */,
 				87B96D2A27FEEDBC000E44C0 /* LYPasterApp.swift */,
 				87B96D2C27FEEDBC000E44C0 /* ContentView.swift */,
@@ -98,19 +114,53 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		87B96D3E2800397B000E44C0 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				87B96D3F28003983000E44C0 /* web */,
+				871D42E328162CEB0041CBC7 /* LYSUView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		87B96D3F28003983000E44C0 /* web */ = {
+			isa = PBXGroup;
+			children = (
+				87B96D40280039DE000E44C0 /* LYWebview.swift */,
+				871D42E52816406A0041CBC7 /* LYWCustomWebview.swift */,
+			);
+			path = web;
+			sourceTree = "<group>";
+		};
 		F7A64DC7C9E015B8DC7A2BED /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				5E6DE245D9217E17D7FC3348 /* Pods-LYPaster.debug.xcconfig */,
 				F27FCD65EFA48B9F99D53C74 /* Pods-LYPaster.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		871D42EA281792390041CBC7 /* LYPasteSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 871D42F72817923B0041CBC7 /* Build configuration list for PBXNativeTarget "LYPasteSwift" */;
+			buildPhases = (
+				871D42E7281792390041CBC7 /* Sources */,
+				871D42E8281792390041CBC7 /* Frameworks */,
+				871D42E9281792390041CBC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LYPasteSwift;
+			productName = LYPasteSwift;
+			productReference = 871D42EB281792390041CBC7 /* LYPasteSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
 		87B96D2627FEEDBC000E44C0 /* LYPaster */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87B96D3627FEEDBD000E44C0 /* Build configuration list for PBXNativeTarget "LYPaster" */;
@@ -136,9 +186,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					871D42EA281792390041CBC7 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
 					87B96D2627FEEDBC000E44C0 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -158,11 +211,19 @@
 			projectRoot = "";
 			targets = (
 				87B96D2627FEEDBC000E44C0 /* LYPaster */,
+				871D42EA281792390041CBC7 /* LYPasteSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		871D42E9281792390041CBC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87B96D2527FEEDBC000E44C0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -200,20 +261,82 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		871D42E7281792390041CBC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		87B96D2327FEEDBC000E44C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				871D42E62816406A0041CBC7 /* LYWCustomWebview.swift in Sources */,
 				87B96D2D27FEEDBC000E44C0 /* ContentView.swift in Sources */,
 				87B96D2B27FEEDBC000E44C0 /* LYPasterApp.swift in Sources */,
 				87B96D3C27FEEE13000E44C0 /* LYPasterMonitor.swift in Sources */,
+				871D42E428162CEB0041CBC7 /* LYSUView.swift in Sources */,
 				87B96D3D27FEEE13000E44C0 /* LYPasterData.swift in Sources */,
+				87B96D41280039DF000E44C0 /* LYWebview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		871D42F82817923B0041CBC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LYPasteSwift/LYPasteSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyedu.LYPasteSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		871D42F92817923B0041CBC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LYPasteSwift/LYPasteSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dyedu.LYPasteSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		87B96D3427FEEDBD000E44C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -384,6 +507,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		871D42F72817923B0041CBC7 /* Build configuration list for PBXNativeTarget "LYPasteSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				871D42F82817923B0041CBC7 /* Debug */,
+				871D42F92817923B0041CBC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		87B96D2227FEEDBC000E44C0 /* Build configuration list for PBXProject "LYPaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

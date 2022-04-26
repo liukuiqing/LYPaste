@@ -30,23 +30,27 @@ class LYPasterMonitor: NSObject {
         return ["LYPasterMonitor"]
     }
 }
-//extension LYPasterMonitor:NSPasteboardTypeOwner{
+//timer
 extension LYPasterMonitor{
+    
     func bindPaste() -> Void {
         Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(checkPaste), userInfo: nil, repeats: true)
+//        if paste.types?.contains(.string) == false{
+//        paste.addTypes([.string,.rtf], owner: self)
+//        }
     }
     @objc func checkPaste() -> Void {
         if pasteCount != paste.changeCount {
             pasteCount = paste.changeCount
-//            paste.types?.forEach({ type in
-//                switch type {
-//                case .string :
-//                    let str = paste.string(forType: type)
-//                    print("string:" + (str ?? "nil"))
-//                default :
-//                    print("unknow:" + "\(type) -" + (paste.string(forType: type) ?? "null" ))
-//                }
-//            })
+            //            paste.types?.forEach({ type in
+            //                switch type {
+            //                case .string :
+            //                    let str = paste.string(forType: type)
+            //                    print("string:" + (str ?? "nil"))
+            //                default :
+            //                    print("unknow:" + "\(type) -" + (paste.string(forType: type) ?? "null" ))
+            //                }
+            //            })
             paste.pasteboardItems?.forEach({ item in
                 print(item.types.count)
                 let type = item.types.first
@@ -59,14 +63,44 @@ extension LYPasterMonitor{
                     print("un parse :" + "\(type?.rawValue)")
                 }
             })
+            print(pasteCount)
         }
-        print(pasteCount)
     }
     func parseStringPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
-        print(item.string(forType: type))
+        print("\(item.string(forType: type))")
     }
     func parseRTFPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
-        print(item.string(forType: type))
+        var data = item.data(forType: type)!
+        var path = NSHomeDirectory().appending("/paster_data")
+        var filePath = NSHomeDirectory().appending("/001.rtf")
+        do {
+            if FileManager.default.fileExists(atPath: path) == false{
+                try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+            }
+            try data.write(to: NSURL.fileURL(withPath: filePath))
+        } catch let lerror as Error {
+            print("\(lerror)")
+        }
+//        let ss = item.string(forType: type)
+//        data = (ss?.data(using: .utf8))!
+//        do {
+////            try
+//            print("dadada\\\\")
+//            let dd = try JSONSerialization.jsonObject(with: data, options:.mutableContainers)
+//            print(dd)
+//        } catch let lerror as Error{
+//            print("\(lerror)")
+//        }
+//
+////        print(item.string(forType: type))
     }
-
 }
+//extension LYPasterMonitor:NSPasteboardTypeOwner{
+//    func pasteboard(_ sender: NSPasteboard, provideDataForType type: NSPasteboard.PasteboardType) {
+//        print("\(type.rawValue)")
+//    }
+//
+//    func pasteboardChangedOwner(_ sender: NSPasteboard) {
+//        print("\(sender)")
+//    }
+//}
