@@ -14,7 +14,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var lll:LYWCustomWebvie
+        var lll:LYWCustomWebview?
         // Do any additional setup after loading the view.
     }
 
