@@ -1,6 +1,4 @@
 PODS:
-  - lyData (1.0):
-    - WCDB.swift
   - SQLiteRepairKit (1.2.2):
     - WCDBOptimizedSQLCipher (~> 1.2.0)
   - WCDB.swift (1.0.8.2):
@@ -9,7 +7,6 @@ PODS:
   - WCDBOptimizedSQLCipher (1.2.1)
 
 DEPENDENCIES:
-  - lyData (from `./LocalPods/lyData`)
   - WCDB.swift (~> 1.0.8.2)
 
 SPEC REPOS:
@@ -18,16 +15,11 @@ SPEC REPOS:
     - WCDB.swift
     - WCDBOptimizedSQLCipher
 
-EXTERNAL SOURCES:
-  lyData:
-    :path: "./LocalPods/lyData"
-
 SPEC CHECKSUMS:
-  lyData: 86afcd650307a2bb064b9a340d6633ad825f2cd9
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: 8431d8dcaafc5da2b652762e44d2bf9a0fcea963
+PODFILE CHECKSUM: 00e885e062cd05df7fe19f9a699036c9ee24b796
 
 COCOAPODS: 1.11.2

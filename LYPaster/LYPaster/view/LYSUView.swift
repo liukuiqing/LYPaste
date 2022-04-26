@@ -21,7 +21,7 @@ struct LYSUView: NSViewRepresentable {
 //        lab.string = "lab\tt,t\nefsf\nefsf\nefsf"
 //        return lab
         let cview = LYWCustomWebview()
-        cview.urlStr = "test"
+        cview.urlStr = "https://blog.csdn.net/qq_36924683/article/details/121198340"
         return cview
         
     }

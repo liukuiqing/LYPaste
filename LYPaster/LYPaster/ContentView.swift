@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let pp = LYPasterMonitor.shareInstance()
+//    let pp = LYPasterMonitor.shareInstance()
     var body: some View {
         VStack(spacing: 10) {
             Text("Hello, world!")

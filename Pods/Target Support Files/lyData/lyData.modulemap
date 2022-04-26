@@ -1,6 +1,0 @@
-framework module lyData {
-  umbrella header "lyData-umbrella.h"
-
-  export *
-  module * { export * }
-}

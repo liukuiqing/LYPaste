@@ -1,0 +1,6 @@
+framework module Pods_LYPaster {
+  umbrella header "Pods-LYPaster-umbrella.h"
+
+  export *
+  module * { export * }
+}

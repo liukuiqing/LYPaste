@@ -9,7 +9,7 @@ import Cocoa
 import WebKit
 
 class LYWCustomWebview: NSView {
-    var webview = WKWebView()
+    var webview = WKWebView.init(frame: NSRect.init(x: 0, y: 0, width: 600, height: 900))
     var urlStr:String? {
 //        get{
 //            return webview.url?.absoluteString
