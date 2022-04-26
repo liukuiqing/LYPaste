@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		0435DCB02800315000EC2FAA /* TestTableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableModel.swift; sourceTree = "<group>"; };
 		59E6046FAF92F523ECE90779 /* Pods_LYPaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYPaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E6DE245D9217E17D7FC3348 /* Pods-LYPaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPaster.debug.xcconfig"; path = "Target Support Files/Pods-LYPaster/Pods-LYPaster.debug.xcconfig"; sourceTree = "<group>"; };
+		5E6DE245D9217E17D7FC3348 /* Pods-LYPaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPaster.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-LYPaster/Pods-LYPaster.debug.xcconfig"; sourceTree = "<group>"; };
 		871D42E328162CEB0041CBC7 /* LYSUView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYSUView.swift; sourceTree = "<group>"; };
 		871D42E52816406A0041CBC7 /* LYWCustomWebview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWCustomWebview.swift; sourceTree = "<group>"; };
 		871D42EB281792390041CBC7 /* LYPasteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPasteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,7 +36,7 @@
 		87B96D3A27FEEE13000E44C0 /* LYPasterMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPasterMonitor.swift; sourceTree = "<group>"; };
 		87B96D3B27FEEE13000E44C0 /* LYPasterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPasterData.swift; sourceTree = "<group>"; };
 		87B96D40280039DE000E44C0 /* LYWebview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYWebview.swift; sourceTree = "<group>"; };
-		F27FCD65EFA48B9F99D53C74 /* Pods-LYPaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPaster.release.xcconfig"; path = "Target Support Files/Pods-LYPaster/Pods-LYPaster.release.xcconfig"; sourceTree = "<group>"; };
+		F27FCD65EFA48B9F99D53C74 /* Pods-LYPaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPaster.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-LYPaster/Pods-LYPaster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

@@ -1,7 +1,10 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
+workspace 'LYPaster.xcworkspace'
+
 target 'LYPaster' do
+  project 'LYPaster/LYPaster.xcodeproj'
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
