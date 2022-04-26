@@ -18,5 +18,5 @@ target 'LYPasteSwift' do
 
   # Pods for LYPaster
   pod 'WCDB.swift', '~> 1.0.8.2'
-  #pod 'data', :path => './LocalPods/data'
+  pod 'data', :path => './LocalPods/data'
 end
