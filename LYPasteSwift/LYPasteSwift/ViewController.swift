@@ -6,8 +6,7 @@
 //
 
 import Cocoa
-//import LYWCustomWebview
-//import lyData.LYWCustomWebview
+
 import lyData
 
 class ViewController: NSViewController {
@@ -15,7 +14,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        var lll:LYWCustomWebview?
+        var lll:LYWCustomWebvie
         // Do any additional setup after loading the view.
     }
 
