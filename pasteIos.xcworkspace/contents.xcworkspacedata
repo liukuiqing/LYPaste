@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:LocalPods"
+      name = "LocalPods">
+      <Group
+         location = "group:data"
+         name = "data">
+         <Group
+            location = "group:Util"
+            name = "Util">
+            <FileRef
+               location = "group:LYPasterMonitor.swift">
+            </FileRef>
+            <Group
+               location = "group:tables"
+               name = "tables">
+               <FileRef
+                  location = "group:TestTableModel.swift">
+               </FileRef>
+            </Group>
+            <FileRef
+               location = "group:LYPasterData.swift">
+            </FileRef>
+         </Group>
+         <FileRef
+            location = "group:data.podspec">
+         </FileRef>
+      </Group>
+   </Group>
+   <FileRef
+      location = "group:LYPasteSwift/LYPasteSwift.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:LYPaster/LYPaster.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

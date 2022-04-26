@@ -1,4 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-LYPaster/Pods-LYPaster-frameworks.sh
-${BUILT_PRODUCTS_DIR}/SQLiteRepairKit/sqliterk.framework
-${BUILT_PRODUCTS_DIR}/WCDB.swift/WCDBSwift.framework
-${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework
+${BUILT_PRODUCTS_DIR}/SQLiteRepairKit-macOS12.1/sqliterk.framework
+${BUILT_PRODUCTS_DIR}/WCDB.swift-macOS12.1/WCDBSwift.framework
+${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher-macOS12.1/sqlcipher.framework

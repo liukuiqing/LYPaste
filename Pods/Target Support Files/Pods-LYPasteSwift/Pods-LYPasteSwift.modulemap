@@ -1,0 +1,6 @@
+framework module Pods_LYPasteSwift {
+  umbrella header "Pods-LYPasteSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,56 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		871D4310281795F90041CBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D430F281795F90041CBC7 /* AppDelegate.swift */; };
-		871D4312281795F90041CBC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D4311281795F90041CBC7 /* ViewController.swift */; };
-		871D4314281795FB0041CBC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871D4313281795FB0041CBC7 /* Assets.xcassets */; };
-		871D4317281795FB0041CBC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871D4315281795FB0041CBC7 /* Main.storyboard */; };
+		871D432B28179B310041CBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D432A28179B310041CBC7 /* AppDelegate.swift */; };
+		871D432D28179B310041CBC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D432C28179B310041CBC7 /* ViewController.swift */; };
+		871D432F28179B330041CBC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871D432E28179B330041CBC7 /* Assets.xcassets */; };
+		871D433228179B330041CBC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871D433028179B330041CBC7 /* Main.storyboard */; };
+		EC83BF63428F21CB626EAC2D /* Pods_LYPasteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		871D430C281795F90041CBC7 /* LYPasteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPasteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		871D430F281795F90041CBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		871D4311281795F90041CBC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		871D4313281795FB0041CBC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		871D4316281795FB0041CBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		871D4318281795FB0041CBC7 /* LYPasteSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LYPasteSwift.entitlements; sourceTree = "<group>"; };
+		871D432728179B310041CBC7 /* LYPasteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPasteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		871D432A28179B310041CBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		871D432C28179B310041CBC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		871D432E28179B330041CBC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		871D433128179B330041CBC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		871D433328179B330041CBC7 /* LYPasteSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LYPasteSwift.entitlements; sourceTree = "<group>"; };
+		A07E51B0C180BBBB2B9A0086 /* Pods-LYPasteSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.release.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.release.xcconfig"; sourceTree = "<group>"; };
+		BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYPasteSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8685E61835FF5B101900F8A /* Pods-LYPasteSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.debug.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		871D4309281795F90041CBC7 /* Frameworks */ = {
+		871D432428179B310041CBC7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC83BF63428F21CB626EAC2D /* Pods_LYPasteSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		871D4303281795F90041CBC7 = {
+		2E7F29B07300F4FA08402DA3 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				871D430E281795F90041CBC7 /* LYPasteSwift */,
-				871D430D281795F90041CBC7 /* Products */,
+				E8685E61835FF5B101900F8A /* Pods-LYPasteSwift.debug.xcconfig */,
+				A07E51B0C180BBBB2B9A0086 /* Pods-LYPasteSwift.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		8462BD4987BE2F2165864C6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		871D431E28179B310041CBC7 = {
+			isa = PBXGroup;
+			children = (
+				871D432928179B310041CBC7 /* LYPasteSwift */,
+				871D432828179B310041CBC7 /* Products */,
+				2E7F29B07300F4FA08402DA3 /* Pods */,
+				8462BD4987BE2F2165864C6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		871D430D281795F90041CBC7 /* Products */ = {
+		871D432828179B310041CBC7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				871D430C281795F90041CBC7 /* LYPasteSwift.app */,
+				871D432728179B310041CBC7 /* LYPasteSwift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		871D430E281795F90041CBC7 /* LYPasteSwift */ = {
+		871D432928179B310041CBC7 /* LYPasteSwift */ = {
 			isa = PBXGroup;
 			children = (
-				871D430F281795F90041CBC7 /* AppDelegate.swift */,
-				871D4311281795F90041CBC7 /* ViewController.swift */,
-				871D4313281795FB0041CBC7 /* Assets.xcassets */,
-				871D4315281795FB0041CBC7 /* Main.storyboard */,
-				871D4318281795FB0041CBC7 /* LYPasteSwift.entitlements */,
+				871D432A28179B310041CBC7 /* AppDelegate.swift */,
+				871D432C28179B310041CBC7 /* ViewController.swift */,
+				871D432E28179B330041CBC7 /* Assets.xcassets */,
+				871D433028179B330041CBC7 /* Main.storyboard */,
+				871D433328179B330041CBC7 /* LYPasteSwift.entitlements */,
 			);
 			path = LYPasteSwift;
 			sourceTree = "<group>";
@@ -64,13 +89,15 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		871D430B281795F90041CBC7 /* LYPasteSwift */ = {
+		871D432628179B310041CBC7 /* LYPasteSwift */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 871D431B281795FB0041CBC7 /* Build configuration list for PBXNativeTarget "LYPasteSwift" */;
+			buildConfigurationList = 871D433628179B330041CBC7 /* Build configuration list for PBXNativeTarget "LYPasteSwift" */;
 			buildPhases = (
-				871D4308281795F90041CBC7 /* Sources */,
-				871D4309281795F90041CBC7 /* Frameworks */,
-				871D430A281795F90041CBC7 /* Resources */,
+				B4D0656D150C6ED626901F13 /* [CP] Check Pods Manifest.lock */,
+				871D432328179B310041CBC7 /* Sources */,
+				871D432428179B310041CBC7 /* Frameworks */,
+				871D432528179B310041CBC7 /* Resources */,
+				FF27ECCC999A91F90B754838 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -78,25 +105,25 @@
 			);
 			name = LYPasteSwift;
 			productName = LYPasteSwift;
-			productReference = 871D430C281795F90041CBC7 /* LYPasteSwift.app */;
+			productReference = 871D432728179B310041CBC7 /* LYPasteSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		871D4304281795F90041CBC7 /* Project object */ = {
+		871D431F28179B310041CBC7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					871D430B281795F90041CBC7 = {
+					871D432628179B310041CBC7 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 871D4307281795F90041CBC7 /* Build configuration list for PBXProject "LYPasteSwift" */;
+			buildConfigurationList = 871D432228179B310041CBC7 /* Build configuration list for PBXProject "LYPasteSwift" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -104,45 +131,87 @@
 				en,
 				Base,
 			);
-			mainGroup = 871D4303281795F90041CBC7;
-			productRefGroup = 871D430D281795F90041CBC7 /* Products */;
+			mainGroup = 871D431E28179B310041CBC7;
+			productRefGroup = 871D432828179B310041CBC7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				871D430B281795F90041CBC7 /* LYPasteSwift */,
+				871D432628179B310041CBC7 /* LYPasteSwift */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		871D430A281795F90041CBC7 /* Resources */ = {
+		871D432528179B310041CBC7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				871D4314281795FB0041CBC7 /* Assets.xcassets in Resources */,
-				871D4317281795FB0041CBC7 /* Main.storyboard in Resources */,
+				871D432F28179B330041CBC7 /* Assets.xcassets in Resources */,
+				871D433228179B330041CBC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B4D0656D150C6ED626901F13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LYPasteSwift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF27ECCC999A91F90B754838 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		871D4308281795F90041CBC7 /* Sources */ = {
+		871D432328179B310041CBC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				871D4312281795F90041CBC7 /* ViewController.swift in Sources */,
-				871D4310281795F90041CBC7 /* AppDelegate.swift in Sources */,
+				871D432D28179B310041CBC7 /* ViewController.swift in Sources */,
+				871D432B28179B310041CBC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		871D4315281795FB0041CBC7 /* Main.storyboard */ = {
+		871D433028179B330041CBC7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				871D4316281795FB0041CBC7 /* Base */,
+				871D433128179B330041CBC7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -150,7 +219,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		871D4319281795FB0041CBC7 /* Debug */ = {
+		871D433428179B330041CBC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -210,7 +279,7 @@
 			};
 			name = Debug;
 		};
-		871D431A281795FB0041CBC7 /* Release */ = {
+		871D433528179B330041CBC7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -263,8 +332,9 @@
 			};
 			name = Release;
 		};
-		871D431C281795FB0041CBC7 /* Debug */ = {
+		871D433728179B330041CBC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8685E61835FF5B101900F8A /* Pods-LYPasteSwift.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -288,8 +358,9 @@
 			};
 			name = Debug;
 		};
-		871D431D281795FB0041CBC7 /* Release */ = {
+		871D433828179B330041CBC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A07E51B0C180BBBB2B9A0086 /* Pods-LYPasteSwift.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -316,25 +387,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		871D4307281795F90041CBC7 /* Build configuration list for PBXProject "LYPasteSwift" */ = {
+		871D432228179B310041CBC7 /* Build configuration list for PBXProject "LYPasteSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				871D4319281795FB0041CBC7 /* Debug */,
-				871D431A281795FB0041CBC7 /* Release */,
+				871D433428179B330041CBC7 /* Debug */,
+				871D433528179B330041CBC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		871D431B281795FB0041CBC7 /* Build configuration list for PBXNativeTarget "LYPasteSwift" */ = {
+		871D433628179B330041CBC7 /* Build configuration list for PBXNativeTarget "LYPasteSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				871D431C281795FB0041CBC7 /* Debug */,
-				871D431D281795FB0041CBC7 /* Release */,
+				871D433728179B330041CBC7 /* Debug */,
+				871D433828179B330041CBC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 871D4304281795F90041CBC7 /* Project object */;
+	rootObject = 871D431F28179B310041CBC7 /* Project object */;
 }

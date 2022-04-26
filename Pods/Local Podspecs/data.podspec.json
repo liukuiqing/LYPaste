@@ -1,0 +1,23 @@
+{
+  "name": "data",
+  "version": "1.0",
+  "homepage": "https://git.namibox.com/app/ios_workspace",
+  "authors": {
+    "base": "liukuiqing"
+  },
+  "summary": "悦读阅读器",
+  "platforms": {
+    "macOS": "9.0",
+    "osx": "10.9"
+  },
+  "source": {
+    "path": "./LocalPods/data"
+  },
+  "source_files": "**/*.swift",
+  "dependencies": {
+    "WCDB.swift": [
+
+    ]
+  },
+  "static_framework": true
+}
