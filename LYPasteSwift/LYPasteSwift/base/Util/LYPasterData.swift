@@ -54,7 +54,8 @@ extension LYPasterData{
         do {
             success = ((try dataBase?.insert(objects: objects, intoTable: table)) != nil)
             if !success {
-                dataBase?.update(table: table, on: <#T##[PropertyConvertible]#>, with: <#T##[ColumnEncodable]#>)
+//                dataBase?.update(table: table, on: <#T##[PropertyConvertible]#>, with: <#T##[ColumnEncodable]#>)
+                print("inser DB error 可能有新字段！！！");
             }
         } catch let error {
             debugPrint(" insert obj error \(error.localizedDescription)")
