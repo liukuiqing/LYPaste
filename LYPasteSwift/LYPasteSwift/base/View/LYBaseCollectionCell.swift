@@ -6,10 +6,12 @@
 //
 
 import Cocoa
+import SwiftUI
 
 class LYBaseCollectionCell: NSCollectionViewItem {
     @IBOutlet weak var scrollTextView: NSScrollView!
     @IBOutlet var textView: NSTextView!
+    @IBOutlet weak var textLab: NSTextField!
     
     var model:TestTableModel?{
         didSet{
@@ -49,7 +51,11 @@ class LYBaseCollectionCell: NSCollectionViewItem {
     func setupRtf() -> Void {
         let path = model?.file_path ?? ""
         do{
-            textView.readRTFD(fromFile: path)
+            let dd = try Data.init(contentsOf: URL.init(fileURLWithPath: path))
+            if dd != nil {
+                textLab.attributedStringValue = NSAttributedString.init(rtf: dd, documentAttributes: nil)!
+            }
+//            textView.readRTFD(fromFile: path)
         } catch let lerror {
             print("str rtf failed: \(lerror)")
         }
