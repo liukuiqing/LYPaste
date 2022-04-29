@@ -7,19 +7,26 @@
 
 import Cocoa
 
-class LYPasteListView: NSView {
+class LYPasteListView: NSView,LYBlock {
+    func voidBlock() {
+        var list = LYPasterData.instance.qureyFromDb(fromTable: TestTableModel.tabName, cls: TestTableModel.self) ?? []
+        if list.count>1 {
+            list = list.reversed()
+        }
+        _dataList = list
+        self.listView.reloadData()
+    }
+    var _dataList:[TestTableModel]?
     var dataList:[TestTableModel]{
         get{
-            var list = LYPasterData.instance.qureyFromDb(fromTable: TestTableModel.tabName, cls: TestTableModel.self) ?? []
-            if list.count>1 {
-//                var marr = NSMutableArray.init(array: list)
-                list = list.reversed()
-//                let sortc = NSSortDescriptor.init(key: "identifier", ascending: false)
-//                marr.sort(using: [sortc])
-//                list = marr as! [TestTableModel]
-                
+            if _dataList == nil {
+                var list = LYPasterData.instance.qureyFromDb(fromTable: TestTableModel.tabName, cls: TestTableModel.self) ?? []
+                if list.count>1 {
+                    list = list.reversed()
+                }
+                _dataList = list
             }
-            return list
+            return _dataList!
         }
     }
     var listView:NSCollectionView {

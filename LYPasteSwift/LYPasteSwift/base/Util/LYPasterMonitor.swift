@@ -8,8 +8,13 @@
 import Cocoa
 import WCDBSwift
 
+protocol LYBlock {
+    func voidBlock() -> Void 
+}
+
 var _pasterMonitor:LYPasterMonitor = LYPasterMonitor()
 class LYPasterMonitor: NSObject {
+    var newPateFunc:LYBlock?
     let paste = NSPasteboard.general
     class func shareInstance() -> LYPasterMonitor {
         return _pasterMonitor
@@ -69,6 +74,7 @@ extension LYPasterMonitor{
                 }
             })
             print(pasteCount)
+            newPateFunc?.voidBlock()
         }
     }
     func parseStringPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
