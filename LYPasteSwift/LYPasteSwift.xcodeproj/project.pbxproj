@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8705661128192E4D00692726 /* LYPasteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705661028192E4D00692726 /* LYPasteListView.swift */; };
 		871D432B28179B310041CBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D432A28179B310041CBC7 /* AppDelegate.swift */; };
 		871D432D28179B310041CBC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D432C28179B310041CBC7 /* ViewController.swift */; };
 		871D432F28179B330041CBC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871D432E28179B330041CBC7 /* Assets.xcassets */; };
@@ -15,10 +16,13 @@
 		871D43482817C7E30041CBC7 /* TestTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D43432817C7E30041CBC7 /* TestTableModel.swift */; };
 		871D43492817C7E30041CBC7 /* LYPasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D43442817C7E30041CBC7 /* LYPasterData.swift */; };
 		871D434A2817C7E30041CBC7 /* LYWCustomWebview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D43462817C7E30041CBC7 /* LYWCustomWebview.swift */; };
+		87DA4369281A770C00C85F7E /* LYBaseCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA4367281A770C00C85F7E /* LYBaseCollectionCell.swift */; };
+		87DA436A281A770C00C85F7E /* LYBaseCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DA4368281A770C00C85F7E /* LYBaseCollectionCell.xib */; };
 		EC83BF63428F21CB626EAC2D /* Pods_LYPasteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8705661028192E4D00692726 /* LYPasteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasteListView.swift; sourceTree = "<group>"; };
 		871D432728179B310041CBC7 /* LYPasteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPasteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		871D432A28179B310041CBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		871D432C28179B310041CBC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +33,8 @@
 		871D43432817C7E30041CBC7 /* TestTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableModel.swift; sourceTree = "<group>"; };
 		871D43442817C7E30041CBC7 /* LYPasterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPasterData.swift; sourceTree = "<group>"; };
 		871D43462817C7E30041CBC7 /* LYWCustomWebview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYWCustomWebview.swift; sourceTree = "<group>"; };
+		87DA4367281A770C00C85F7E /* LYBaseCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYBaseCollectionCell.swift; sourceTree = "<group>"; };
+		87DA4368281A770C00C85F7E /* LYBaseCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYBaseCollectionCell.xib; sourceTree = "<group>"; };
 		A07E51B0C180BBBB2B9A0086 /* Pods-LYPasteSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.release.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.release.xcconfig"; sourceTree = "<group>"; };
 		BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYPasteSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8685E61835FF5B101900F8A /* Pods-LYPasteSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.debug.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				871D43462817C7E30041CBC7 /* LYWCustomWebview.swift */,
+				8705661028192E4D00692726 /* LYPasteListView.swift */,
+				87DA4367281A770C00C85F7E /* LYBaseCollectionCell.swift */,
+				87DA4368281A770C00C85F7E /* LYBaseCollectionCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				871D432F28179B330041CBC7 /* Assets.xcassets in Resources */,
+				87DA436A281A770C00C85F7E /* LYBaseCollectionCell.xib in Resources */,
 				871D433228179B330041CBC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				871D43482817C7E30041CBC7 /* TestTableModel.swift in Sources */,
+				87DA4369281A770C00C85F7E /* LYBaseCollectionCell.swift in Sources */,
+				8705661128192E4D00692726 /* LYPasteListView.swift in Sources */,
 				871D432D28179B310041CBC7 /* ViewController.swift in Sources */,
 				871D432B28179B310041CBC7 /* AppDelegate.swift in Sources */,
 				871D43492817C7E30041CBC7 /* LYPasterData.swift in Sources */,

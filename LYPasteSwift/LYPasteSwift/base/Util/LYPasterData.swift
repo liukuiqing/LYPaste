@@ -49,12 +49,18 @@ extension LYPasterData{
         }
     }
     ///插入
-    func insertToDb<T: TableEncodable>(objects: [T] ,intoTable table: String) -> Void {
+    func insertToDb<T: TableEncodable>(objects: [T] ,intoTable table: String) -> Bool {
+        var success = false
         do {
-            try dataBase?.insert(objects: objects, intoTable: table)
+            success = ((try dataBase?.insert(objects: objects, intoTable: table)) != nil)
+            if !success {
+                dataBase?.update(table: table, on: <#T##[PropertyConvertible]#>, with: <#T##[ColumnEncodable]#>)
+            }
         } catch let error {
             debugPrint(" insert obj error \(error.localizedDescription)")
+            success = false
         }
+        return success
     }
     
     ///修改

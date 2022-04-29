@@ -67,19 +67,19 @@ extension LYPasterMonitor{
         }
     }
     func parseStringPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
-        print("\(item.string(forType: type))")
+        print("\(item.string(forType: type) ?? "none")")
     }
     func parseRTFPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
-        var data = item.data(forType: type)!
-        var path = NSHomeDirectory().appending("/paster_data")
-        var filePath = NSHomeDirectory().appending("/001.rtf")
         do {
+            let data = item.data(forType: type)!
+            let path = NSHomeDirectory().appending("/paster_data")
+            let filePath = path.appending("/001.rtf")
             if FileManager.default.fileExists(atPath: path) == false{
                 try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
             }
             try data.write(to: NSURL.fileURL(withPath: filePath))
-        } catch let lerror as Error {
-            print("\(lerror)")
+        } catch let lerror {
+            print("rtf failed: \(lerror)")
         }
 //        let ss = item.string(forType: type)
 //        data = (ss?.data(using: .utf8))!
@@ -93,6 +93,9 @@ extension LYPasterMonitor{
 //        }
 //
 ////        print(item.string(forType: type))
+    }
+    class func pasteRootPath()->String{
+        return NSHomeDirectory().appending("/paster_data")
     }
 }
 //extension LYPasterMonitor:NSPasteboardTypeOwner{

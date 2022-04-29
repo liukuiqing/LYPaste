@@ -16,8 +16,11 @@ class LYWCustomWebview: NSView {
 //            return webview.url?.absoluteString
 //        }
         didSet{
-//            print(urlStr);
-//            webview.configuration
+            url = URL.init(string: urlStr ?? "")!
+        }
+    }
+    var url:URL?{
+        didSet{
             if webview == nil{
                 let config = WKWebViewConfiguration()
                 //            config.select
@@ -29,17 +32,18 @@ class LYWCustomWebview: NSView {
                 preferences.javaScriptCanOpenWindowsAutomatically = true;
                 config.preferences = preferences;
                 
-                webview = WKWebView.init(frame: NSRect.init(x: 0, y: 0, width: 600, height: 900), configuration: config)
+//                webview = WKWebView.init(frame: NSRect.init(x: 0, y: 0, width: 900, height: 500), configuration: config)
+                webview = WKWebView.init(frame: self.bounds, configuration: config)
                 webview?.uiDelegate = self
                 webview?.navigationDelegate = self
                 self.addSubview(webview!)
             }
-            
-            let url = URL.init(string: urlStr ?? "")!
-            webview?.load(URLRequest.init(url: url))
+            webview?.load(URLRequest.init(url: url ?? URL(fileURLWithPath: "")))
         }
     }
-    
+    override func resizeSubviews(withOldSize oldSize: NSSize) {
+        webview?.frame = NSRect.init(origin: CGPoint.zero, size: self.frame.size)
+    }
     
 }
 extension LYWCustomWebview :WKUIDelegate{

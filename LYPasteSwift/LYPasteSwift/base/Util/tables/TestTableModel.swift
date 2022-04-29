@@ -15,18 +15,32 @@ class TestTableModel: TableCodable {
     var description: String? = nil
     var test: String? = nil
     
+    var file_path:String? = nil
+    var type:String = ""
+    var text:String = ""
+    var date:String = ""
+    
     enum CodingKeys: String, CodingTableKey {
         typealias Root = TestTableModel
         static let objectRelationalMapping = TableBinding(CodingKeys.self)
         case identifier
         case description
         case test
+        case text
+        case file_path
+        case type
+        case date
         
         static var columnConstraintBindings: [TestTableModel.CodingKeys : ColumnConstraintBinding]?{
             return [
                 identifier : ColumnConstraintBinding(isPrimary: true),
                 description: ColumnConstraintBinding(isNotNull: true, defaultTo: "啦啦啦啦啦"),
-                test: ColumnConstraintBinding(isNotNull: false, defaultTo: "tttttt")
+                test: ColumnConstraintBinding(isNotNull: false, defaultTo: "tttttt"),
+                file_path: ColumnConstraintBinding(isNotNull: true, defaultTo: "")
+                ,
+                type: ColumnConstraintBinding(isNotNull: false, defaultTo: ""),
+                text: ColumnConstraintBinding(isNotNull: true, defaultTo: ""),
+                date: ColumnConstraintBinding(isNotNull: false, defaultTo: "")
             ]
         }
         static var indexBindings: [IndexBinding.Subfix: IndexBinding]? {
