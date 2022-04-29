@@ -10,7 +10,16 @@ import Cocoa
 class LYPasteListView: NSView {
     var dataList:[TestTableModel]{
         get{
-            return  LYPasterData.instance.qureyFromDb(fromTable: TestTableModel.tabName, cls: TestTableModel.self) ?? []
+            var list = LYPasterData.instance.qureyFromDb(fromTable: TestTableModel.tabName, cls: TestTableModel.self) ?? []
+            if list.count>1 {
+//                var marr = NSMutableArray.init(array: list)
+                list = list.reversed()
+//                let sortc = NSSortDescriptor.init(key: "identifier", ascending: false)
+//                marr.sort(using: [sortc])
+//                list = marr as! [TestTableModel]
+                
+            }
+            return list
         }
     }
     var listView:NSCollectionView {

@@ -6,12 +6,12 @@
 //
 
 import Cocoa
-
+import WCDBSwift
 
 var _pasterMonitor:LYPasterMonitor = LYPasterMonitor()
 class LYPasterMonitor: NSObject {
     let paste = NSPasteboard.general
-   class func shareInstance() -> LYPasterMonitor {
+    class func shareInstance() -> LYPasterMonitor {
         return _pasterMonitor
     }
     var pasteCount:Int = 0

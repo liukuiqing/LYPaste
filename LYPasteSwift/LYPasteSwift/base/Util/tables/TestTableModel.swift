@@ -13,7 +13,7 @@ let pastTypeRtf         = "pastTextRtf"
 let pastTypeImage       = "pastTextImage"
 let pastTypeFilePath    = "pastFilePath"
 
-class TestTableModel: TableCodable {
+class TestTableModel: TableCodable  {
     
     static let tabName = "test_table"
     
@@ -54,5 +54,17 @@ class TestTableModel: TableCodable {
                 "_index": IndexBinding(indexesBy: test)
             ]
         }
+    }
+    func value(forKeyPath keyPath: String) -> Any? {
+        if keyPath == "identifier"{
+            return identifier
+        }
+        return ""
+    }
+    class func value(forKeyPath keyPath: String) -> Any? {
+        if keyPath == "identifier"{
+            return ""
+        }
+        return ""
     }
 }
