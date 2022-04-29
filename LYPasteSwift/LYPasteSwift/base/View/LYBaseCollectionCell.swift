@@ -21,7 +21,7 @@ class LYBaseCollectionCell: NSCollectionViewItem {
         super.viewDidLoad()
         // Do view setup here.
         self.view.wantsLayer = true
-        self.view.layer?.backgroundColor = NSColor.blue.cgColor
+//        self.view.layer?.backgroundColor = NSColor.blue.cgColor
 //        let tt = NSTextField.init(frame: self.view.bounds)
 //        self.view.addSubview(tt)
 //        tt.stringValue = "feg;oiufha;ughrfuj"
@@ -29,7 +29,7 @@ class LYBaseCollectionCell: NSCollectionViewItem {
 //        tt.wantsLayer = true
 //
 //        self.textView.string  = "dadada"
-      
+//        self.scrollTextView.scrollerStyle = .overlay
     }
     
     func updateUI() -> Void {

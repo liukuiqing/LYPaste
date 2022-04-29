@@ -68,12 +68,13 @@ extension LYPasterMonitor{
     }
     func parseStringPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
 //        print("\(item.string(forType: type) ?? "none")")
-        let test = TestTableModel()
+        let tModel = TestTableModel()
 //        test.description = "老张开车去东北"
-        test.identifier = Int(CACurrentMediaTime())
-        test.text = item.string(forType: type) ?? ""
-        test.date = "\(Date.init())"
-        LYPasterData.instance.insertToDb(objects: [test], intoTable: TestTableModel.tabName)
+        tModel.identifier = Int(CACurrentMediaTime())
+        tModel.text = item.string(forType: type) ?? ""
+        tModel.type = pastTypeText
+        tModel.date = "\(Date.init())"
+        LYPasterData.instance.insertToDb(objects: [tModel], intoTable: TestTableModel.tabName)
     }
     func parseRTFPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
         do {
@@ -86,8 +87,10 @@ extension LYPasterMonitor{
                 try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
             }
             try data.write(to: NSURL.fileURL(withPath: filePath))
+            dbModel.type = pastTypeRtf
             dbModel.text = item.string(forType: type) ?? ""
             dbModel.date = "\(Date.init())"
+            dbModel.file_path = filePath
             LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
         } catch let lerror {
             print("rtf failed: \(lerror)")

@@ -7,6 +7,7 @@
 
 import Cocoa
 import SwiftUI
+import Masonry
 
 //import lyData
 
@@ -41,9 +42,16 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
         let listview =  LYPasteListView.init(frame: NSRect.init(x: 0, y: 0, width: 400, height: 300))
         self.view.addSubview(listview)
+        listview.mas_makeConstraints { make in
+            make?.center.equalTo()(self.view)
+            make?.width.equalTo()(self.view)
+            make?.width.mas_greaterThanOrEqualTo()(500)
+            make?.height.mas_equalTo()(300)
+            make?.height.lessThanOrEqualTo()(self.view)
+        }
         listview.listView.reloadData()
 //        LYPasterData.instance.dropTable(table: TestTableModel.tabName)
-        LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName)
+//        LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName)
         LYPasterData.instance.createTable(table: TestTableModel.tabName, of: TestTableModel.self)
 //        let test = TestTableModel()
 //        test.description = "老张开车去东北"

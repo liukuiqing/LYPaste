@@ -18,10 +18,10 @@ class TestTableModel: TableCodable {
     static let tabName = "test_table"
     
     var identifier: Int? = nil
-    var description: String? = nil
-    var test: String? = nil
+    var description: String? = ""
+    var test: String? = ""
     
-    var file_path:String? = nil
+    var file_path:String? = ""
     var type:String = ""
     var text:String = ""
     var date:String = ""
@@ -42,10 +42,10 @@ class TestTableModel: TableCodable {
                 identifier : ColumnConstraintBinding(isPrimary: true),
                 description: ColumnConstraintBinding(isNotNull: true, defaultTo: "啦啦啦啦啦"),
                 test: ColumnConstraintBinding(isNotNull: false, defaultTo: "tttttt"),
-                file_path: ColumnConstraintBinding(isNotNull: true, defaultTo: "")
+                file_path: ColumnConstraintBinding(isNotNull: false, defaultTo: "")
                 ,
                 type: ColumnConstraintBinding(isNotNull: false, defaultTo: ""),
-                text: ColumnConstraintBinding(isNotNull: true, defaultTo: ""),
+                text: ColumnConstraintBinding(isNotNull: false, defaultTo: ""),
                 date: ColumnConstraintBinding(isNotNull: false, defaultTo: "")
             ]
         }

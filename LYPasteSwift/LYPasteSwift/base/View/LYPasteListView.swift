@@ -32,6 +32,9 @@ class LYPasteListView: NSView {
         get{
             let sview = NSScrollView.init(frame: self.bounds)
             self.addSubview(sview)
+            sview.mas_makeConstraints { make in
+                make?.edges.equalTo()(self)
+            }
             return sview
         }
     }

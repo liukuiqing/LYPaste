@@ -18,4 +18,5 @@ target 'LYPasteSwift' do
 
 #  pod 'lyData', :path => './LocalPods/lyData'
   pod 'WCDB.swift', '~> 1.0.8.2'
+  pod 'Masonry'
 end
