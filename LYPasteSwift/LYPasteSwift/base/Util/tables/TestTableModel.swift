@@ -7,6 +7,12 @@
 
 import Cocoa
 import WCDBSwift
+
+let pastTypeText        = "pastText"
+let pastTypeRtf         = "pastTextRtf"
+let pastTypeImage       = "pastTextImage"
+let pastTypeFilePath    = "pastFilePath"
+
 class TestTableModel: TableCodable {
     
     static let tabName = "test_table"

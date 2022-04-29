@@ -11,6 +11,12 @@ class LYBaseCollectionCell: NSCollectionViewItem {
     @IBOutlet weak var scrollTextView: NSScrollView!
     @IBOutlet var textView: NSTextView!
     
+    var model:TestTableModel?{
+        didSet{
+            updateUI()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
@@ -23,17 +29,32 @@ class LYBaseCollectionCell: NSCollectionViewItem {
 //        tt.wantsLayer = true
 //
 //        self.textView.string  = "dadada"
-        let path = LYPasterMonitor.pasteRootPath().appending("/001.rtf")
+      
+    }
+    
+    func updateUI() -> Void {
+        switch model?.type {
+        case pastTypeRtf:
+            setupRtf()
+            break
+        case pastTypeRtf:
+            setupStr()
+            break
+        default:
+            print("unknow type id:\(model?.identifier)")
+            break
+        }
+    }
+    
+    func setupRtf() -> Void {
+        let path = model?.file_path ?? ""
         do{
-//            let text = try String.init(contentsOfFile: path, encoding: .utf8)
-//            textView.string = text
-//            let dd = try Data.init(contentsOf: URL.init(fileURLWithPath: path))
-//            textView.attributedString = NSAttributedString.init(rtf: dd, documentAttributes: nil)
             textView.readRTFD(fromFile: path)
         } catch let lerror {
             print("str rtf failed: \(lerror)")
         }
-        
     }
-    
+    func setupStr() -> Void {
+        textView.string = model?.text ?? ""
+    }
 }

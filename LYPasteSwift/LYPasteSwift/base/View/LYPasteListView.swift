@@ -8,6 +8,11 @@
 import Cocoa
 
 class LYPasteListView: NSView {
+    var dataList:[TestTableModel]{
+        get{
+            return  LYPasterData.instance.qureyFromDb(fromTable: TestTableModel.tabName, cls: TestTableModel.self) ?? []
+        }
+    }
     var listView:NSCollectionView {
         get{
             let flowlayout = NSCollectionViewFlowLayout.init()
@@ -38,12 +43,12 @@ extension LYPasteListView:NSCollectionViewDelegateFlowLayout {
 }
 extension LYPasteListView:NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return dataList.count
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"), for: indexPath)
-        cell.textField?.stringValue = "\(indexPath)"
+        let cell:LYBaseCollectionCell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"), for: indexPath) as! LYBaseCollectionCell
+        cell.model = dataList[indexPath.item]
         return cell
     }
     

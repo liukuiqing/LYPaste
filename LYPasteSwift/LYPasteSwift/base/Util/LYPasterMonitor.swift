@@ -67,17 +67,28 @@ extension LYPasterMonitor{
         }
     }
     func parseStringPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
-        print("\(item.string(forType: type) ?? "none")")
+//        print("\(item.string(forType: type) ?? "none")")
+        let test = TestTableModel()
+//        test.description = "老张开车去东北"
+        test.identifier = Int(CACurrentMediaTime())
+        test.text = item.string(forType: type) ?? ""
+        test.date = "\(Date.init())"
+        LYPasterData.instance.insertToDb(objects: [test], intoTable: TestTableModel.tabName)
     }
     func parseRTFPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
         do {
+            let dbModel = TestTableModel()
+            dbModel.identifier = Int(CACurrentMediaTime())
             let data = item.data(forType: type)!
             let path = NSHomeDirectory().appending("/paster_data")
-            let filePath = path.appending("/001.rtf")
+            let filePath = path.appending("/\(String(describing: dbModel.identifier)).rtf")
             if FileManager.default.fileExists(atPath: path) == false{
                 try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
             }
             try data.write(to: NSURL.fileURL(withPath: filePath))
+            dbModel.text = item.string(forType: type) ?? ""
+            dbModel.date = "\(Date.init())"
+            LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
         } catch let lerror {
             print("rtf failed: \(lerror)")
         }
