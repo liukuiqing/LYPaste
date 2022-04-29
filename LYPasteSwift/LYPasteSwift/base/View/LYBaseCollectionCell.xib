@@ -47,11 +47,11 @@
                     </scroller>
                 </scrollView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUI-VY-IUN">
-                    <rect key="frame" x="-2" y="80" width="513" height="16"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="AvC-y0-Vmq">
+                    <rect key="frame" x="0.0" y="80" width="509" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" drawsBackground="YES" id="AvC-y0-Vmq">
                         <font key="font" usesAppearanceFont="YES"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>

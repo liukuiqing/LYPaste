@@ -44,6 +44,7 @@ class LYBaseCollectionCell: NSCollectionViewItem {
             break
         default:
             print("unknow type id:\(model?.identifier)")
+            textLab.stringValue = model?.type ?? "unknow"
             break
         }
     }

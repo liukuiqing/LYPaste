@@ -24,7 +24,10 @@ class LYPasteListView: NSView {
             collectionView.collectionViewLayout  = flowlayout
             collectionView.register(NSCollectionViewItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "cell"))
             collectionView.register(LYBaseCollectionCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"))
+            collectionView.register(LYImageCollectionCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "imagecell"))
             self.scrollView.documentView = collectionView
+            collectionView.wantsLayer = true
+            collectionView.layer?.backgroundColor = NSColor.gray.cgColor
             return collectionView
         }
     }
@@ -50,8 +53,17 @@ extension LYPasteListView:NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let cell:LYBaseCollectionCell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"), for: indexPath) as! LYBaseCollectionCell
-        cell.model = dataList[indexPath.item]
+        let cell : NSCollectionViewItem
+        let model = dataList[indexPath.item]
+        if model.type == pastTypeImage{
+           let imageCell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "imagecell"), for: indexPath) as! LYImageCollectionCell
+            imageCell.model = model
+            cell = imageCell
+        }else{
+           let baseCell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"), for: indexPath) as! LYBaseCollectionCell
+            baseCell.model = model
+            cell = baseCell
+        }
         return cell
     }
     

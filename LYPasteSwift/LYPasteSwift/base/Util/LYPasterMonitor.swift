@@ -57,8 +57,13 @@ extension LYPasterMonitor{
                 switch type {
                 case NSPasteboard.PasteboardType.string:
                     self.parseStringPasteItem(item: item, type: type!)
+                    break
                 case NSPasteboard.PasteboardType.rtf:
                     self.parseRTFPasteItem(item: item, type: type!)
+                    break
+                case NSPasteboard.PasteboardType.png:
+                    self.parseImagePasteItem(item: item, type: type!)
+                    break
                 default :
                     print("un parse :" + "\(type?.rawValue)")
                 }
@@ -95,18 +100,26 @@ extension LYPasterMonitor{
         } catch let lerror {
             print("rtf failed: \(lerror)")
         }
-//        let ss = item.string(forType: type)
-//        data = (ss?.data(using: .utf8))!
-//        do {
-////            try
-//            print("dadada\\\\")
-//            let dd = try JSONSerialization.jsonObject(with: data, options:.mutableContainers)
-//            print(dd)
-//        } catch let lerror as Error{
-//            print("\(lerror)")
-//        }
-//
-////        print(item.string(forType: type))
+    }
+    func parseImagePasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
+        do {
+            let dbModel = TestTableModel()
+            dbModel.identifier = Int(CACurrentMediaTime())
+            let data = item.data(forType: type)!
+            let path = NSHomeDirectory().appending("/paster_data")
+            let filePath = path.appending("/\(String(describing: dbModel.identifier)).png")
+            if FileManager.default.fileExists(atPath: path) == false{
+                try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+            }
+            try data.write(to: NSURL.fileURL(withPath: filePath))
+            dbModel.type = pastTypeImage
+            dbModel.text = item.string(forType: type) ?? ""
+            dbModel.date = "\(Date.init())"
+            dbModel.file_path = filePath
+            LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
+        }catch let lerror {
+            print("image failed: \(lerror)")
+        }
     }
     class func pasteRootPath()->String{
         return NSHomeDirectory().appending("/paster_data")
