@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04E2A99A281CFDC8002FA329 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2A999281CFDC7002FA329 /* StatusBarController.swift */; };
+		04E2A99C281CFE15002FA329 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2A99B281CFE15002FA329 /* EventMonitor.swift */; };
 		8705661128192E4D00692726 /* LYPasteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705661028192E4D00692726 /* LYPasteListView.swift */; };
 		871D432B28179B310041CBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D432A28179B310041CBC7 /* AppDelegate.swift */; };
 		871D432D28179B310041CBC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D432C28179B310041CBC7 /* ViewController.swift */; };
@@ -24,6 +26,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04E2A998281CFCF2002FA329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		04E2A999281CFDC7002FA329 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		04E2A99B281CFE15002FA329 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
 		8705661028192E4D00692726 /* LYPasteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasteListView.swift; sourceTree = "<group>"; };
 		871D432728179B310041CBC7 /* LYPasteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPasteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		871D432A28179B310041CBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 		871D432928179B310041CBC7 /* LYPasteSwift */ = {
 			isa = PBXGroup;
 			children = (
+				04E2A998281CFCF2002FA329 /* Info.plist */,
 				871D433F2817C7E30041CBC7 /* base */,
 				871D432A28179B310041CBC7 /* AppDelegate.swift */,
 				871D432C28179B310041CBC7 /* ViewController.swift */,
@@ -120,6 +126,8 @@
 				871D43412817C7E30041CBC7 /* LYPasterMonitor.swift */,
 				871D43422817C7E30041CBC7 /* tables */,
 				871D43442817C7E30041CBC7 /* LYPasterData.swift */,
+				04E2A999281CFDC7002FA329 /* StatusBarController.swift */,
+				04E2A99B281CFE15002FA329 /* EventMonitor.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -264,6 +272,8 @@
 				871D43482817C7E30041CBC7 /* TestTableModel.swift in Sources */,
 				87DA4369281A770C00C85F7E /* LYBaseCollectionCell.swift in Sources */,
 				87DA436D281BCFE300C85F7E /* LYImageCollectionCell.swift in Sources */,
+				04E2A99C281CFE15002FA329 /* EventMonitor.swift in Sources */,
+				04E2A99A281CFDC8002FA329 /* StatusBarController.swift in Sources */,
 				8705661128192E4D00692726 /* LYPasteListView.swift in Sources */,
 				871D432D28179B310041CBC7 /* ViewController.swift in Sources */,
 				871D432B28179B310041CBC7 /* AppDelegate.swift in Sources */,
@@ -411,6 +421,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LYPasteSwift/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -439,6 +450,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LYPasteSwift/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
