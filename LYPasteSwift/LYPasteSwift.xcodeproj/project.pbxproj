@@ -114,6 +114,7 @@
 		871D433F2817C7E30041CBC7 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				87DA437E281D584500C85F7E /* Controller */,
 				871D43402817C7E30041CBC7 /* Util */,
 				871D43452817C7E30041CBC7 /* View */,
 			);
@@ -126,7 +127,6 @@
 				871D43412817C7E30041CBC7 /* LYPasterMonitor.swift */,
 				871D43422817C7E30041CBC7 /* tables */,
 				871D43442817C7E30041CBC7 /* LYPasterData.swift */,
-				04E2A999281CFDC7002FA329 /* StatusBarController.swift */,
 				04E2A99B281CFE15002FA329 /* EventMonitor.swift */,
 			);
 			path = Util;
@@ -151,6 +151,14 @@
 				87DA436C281BCFE300C85F7E /* LYImageCollectionCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		87DA437E281D584500C85F7E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04E2A999281CFDC7002FA329 /* StatusBarController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

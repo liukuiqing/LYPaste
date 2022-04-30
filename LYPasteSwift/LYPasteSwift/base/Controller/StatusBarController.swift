@@ -45,7 +45,7 @@ class StatusBarController {
             let _ =  NSWindowController();
             debugPrint("\(NSApplication.shared.windows)")
             var rect = NSScreen.main?.frame ?? NSMakeRect(0, 0, 640, 480)
-            rect = NSRect(x: 0, y: 0, width: rect.width, height: 200)
+            rect = NSRect(x: 0, y: 0, width: rect.width, height: 350)
             let window = NSWindow(contentRect: rect,
                                  styleMask: [],
                                  backing: .buffered,
@@ -60,7 +60,20 @@ class StatusBarController {
             view.layer = layer
             view.layer?.backgroundColor = NSColor.red.cgColor
             /// todo : 此处将显示的view赋值给contentView
-            window.contentView = view
+            let listview =  LYPasteListView.init(frame: NSRect.init(x: 0, y: 0, width: rect.width, height: rect.height))
+//            self.view.addSubview(listview)
+//            listview.mas_makeConstraints { make in
+//                make?.center.equalTo()(self.view)
+//                make?.width.equalTo()(self.view)
+//                make?.width.mas_greaterThanOrEqualTo()(500)
+//                make?.height.mas_equalTo()(300)
+//                make?.height.lessThanOrEqualTo()(self.view)
+//            }
+            window.contentView = listview
+            listview.listView.reloadData()
+            LYPasterData.instance.createTable(table: TestTableModel.tabName, of: TestTableModel.self)
+
+            LYPasterMonitor.shareInstance().newPateFunc = listview as! LYBlock
             self.window = window
 //            NSApplication.shared.windows.last?.orderFront(window)
 //            window.orderFront(NSApplication.shared.windows.last)
