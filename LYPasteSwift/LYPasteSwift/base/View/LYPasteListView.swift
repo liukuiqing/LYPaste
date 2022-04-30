@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import WCDBSwift
 
 class LYPasteListView: NSView,LYBlock {
     func voidBlock() {
@@ -57,6 +58,15 @@ class LYPasteListView: NSView,LYBlock {
             return sview
         }
     }
+    
+    func clickCell(_ model:TestTableModel) -> Void {
+        LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == model.identifier ?? 0)
+//        model.identifier = Int(CACurrentMediaTime())
+//        model.date = "\(Date.init())"
+//        LYPasterData.instance.insertToDb(objects: [model], intoTable: TestTableModel.tabName)
+        LYPasterMonitor.shareInstance().updateToPasteWithModel(model)
+//        voidBlock()
+    }
 }
 extension LYPasteListView:NSCollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
@@ -74,14 +84,26 @@ extension LYPasteListView:NSCollectionViewDataSource {
         if model.type == pastTypeImage{
            let imageCell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "imagecell"), for: indexPath) as! LYImageCollectionCell
             imageCell.model = model
+//            imageCell.block
             cell = imageCell
         }else{
            let baseCell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"), for: indexPath) as! LYBaseCollectionCell
             baseCell.model = model
+            weak var weak_self = self
+            baseCell.modelBlock = { smodel in
+                weak_self?.clickCell(smodel)
+            }
             cell = baseCell
         }
         return cell
     }
     
-    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        for indexp in indexPaths {
+            print("\(indexp.item)")
+        }
+    }
+    func collectionView(_ collectionView: NSCollectionView, canDragItemsAt indexPaths: Set<IndexPath>, with event: NSEvent) -> Bool {
+        return true
+    }
 }

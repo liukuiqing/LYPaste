@@ -45,6 +45,16 @@
                         <color key="backgroundColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="KKn-lf-Xiz">
+                    <rect key="frame" x="0.0" y="0.0" width="495" height="76"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="lrN-85-tAB">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickCell:" target="-2" id="9kY-Qx-Gnr"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="mUI-VY-IUN" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="5aG-MI-GUf"/>
@@ -52,6 +62,10 @@
                 <constraint firstItem="mUI-VY-IUN" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="60" id="9qn-84-kH7"/>
                 <constraint firstAttribute="trailing" secondItem="mUI-VY-IUN" secondAttribute="trailing" id="FaA-y5-Lnk"/>
                 <constraint firstItem="Y20-Fh-0k0" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="RqZ-ff-CXz"/>
+                <constraint firstAttribute="trailing" secondItem="KKn-lf-Xiz" secondAttribute="trailing" id="ck1-jC-GLU"/>
+                <constraint firstItem="KKn-lf-Xiz" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="jEb-7a-8mJ"/>
+                <constraint firstAttribute="bottom" secondItem="KKn-lf-Xiz" secondAttribute="bottom" id="jqd-8V-YPI"/>
+                <constraint firstItem="KKn-lf-Xiz" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="lo7-PV-ypU"/>
                 <constraint firstAttribute="bottom" secondItem="mUI-VY-IUN" secondAttribute="bottom" id="qYE-14-BjI"/>
                 <constraint firstAttribute="trailing" secondItem="Y20-Fh-0k0" secondAttribute="trailing" id="rhR-tm-tPm"/>
             </constraints>

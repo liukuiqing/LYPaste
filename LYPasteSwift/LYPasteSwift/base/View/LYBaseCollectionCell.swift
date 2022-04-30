@@ -64,4 +64,11 @@ class LYBaseCollectionCell: NSCollectionViewItem {
     func setupStr() -> Void {
         textView.string = model?.text ?? ""
     }
+    @IBAction func clickCell(_ sender: NSButton) {
+        if modelBlock != nil{
+            modelBlock?(model!)
+        }
+    }
+    var modelBlock:((_ model:TestTableModel)->Void)?
+    
 }

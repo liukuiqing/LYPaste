@@ -82,9 +82,9 @@ extension LYPasterMonitor{
         let tModel = TestTableModel()
 //        test.description = "老张开车去东北"
         tModel.identifier = Int(CACurrentMediaTime())
+        tModel.date = "\(Date.init())"
         tModel.text = item.string(forType: type) ?? ""
         tModel.type = pastTypeText
-        tModel.date = "\(Date.init())"
         LYPasterData.instance.insertToDb(objects: [tModel], intoTable: TestTableModel.tabName)
     }
     func parseRTFPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
@@ -129,6 +129,28 @@ extension LYPasterMonitor{
     }
     class func pasteRootPath()->String{
         return NSHomeDirectory().appending("/paster_data")
+    }
+    func updateToPasteWithModel(_ model:TestTableModel) -> Bool {
+        var success = false
+        let clecrState = paste.clearContents()
+        if model.type == pastTypeText {
+            success = paste.setString(model.text, forType: .string)
+        }else if model.type == pastTypeRtf{
+            do {
+                let data = try Data.init(contentsOf: URL.init(fileURLWithPath: model.file_path ?? ""))
+                success = paste.setData(data, forType: .rtf)
+            } catch let error {
+                debugPrint("update paste rtf error \(error.localizedDescription)")
+            }
+        }else if model.type == pastTypeImage{
+            do {
+                let data = try Data.init(contentsOf: URL.init(fileURLWithPath: model.file_path ?? ""))
+                success = paste.setData(data, forType: .png)
+            } catch let error {
+                debugPrint("update paste rtf error \(error.localizedDescription)")
+            }
+        }
+        return success
     }
 }
 //extension LYPasterMonitor:NSPasteboardTypeOwner{

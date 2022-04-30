@@ -51,20 +51,8 @@ class TestTableModel: TableCodable  {
         }
         static var indexBindings: [IndexBinding.Subfix: IndexBinding]? {
             return [
-                "_index": IndexBinding(indexesBy: test)
+                "_index": IndexBinding(indexesBy: identifier)
             ]
         }
-    }
-    func value(forKeyPath keyPath: String) -> Any? {
-        if keyPath == "identifier"{
-            return identifier
-        }
-        return ""
-    }
-    class func value(forKeyPath keyPath: String) -> Any? {
-        if keyPath == "identifier"{
-            return ""
-        }
-        return ""
     }
 }
