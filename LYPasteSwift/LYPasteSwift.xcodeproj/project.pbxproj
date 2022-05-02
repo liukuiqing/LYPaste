@@ -22,6 +22,10 @@
 		87DA436A281A770C00C85F7E /* LYBaseCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DA4368281A770C00C85F7E /* LYBaseCollectionCell.xib */; };
 		87DA436D281BCFE300C85F7E /* LYImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA436B281BCFE300C85F7E /* LYImageCollectionCell.swift */; };
 		87DA436E281BCFE300C85F7E /* LYImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87DA436C281BCFE300C85F7E /* LYImageCollectionCell.xib */; };
+		87DA4385281E5CA900C85F7E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87DA4384281E5CA900C85F7E /* IOKit.framework */; };
+		87DA438C281E6A7400C85F7E /* CallBackFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA438A281E6A7400C85F7E /* CallBackFunctions.swift */; };
+		87DA438D281E6A7400C85F7E /* Keylogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA438B281E6A7400C85F7E /* Keylogger.swift */; };
+		87DA4391281E7D2B00C85F7E /* pyLogger.py in Resources */ = {isa = PBXBuildFile; fileRef = 87DA4390281E7D2B00C85F7E /* pyLogger.py */; };
 		EC83BF63428F21CB626EAC2D /* Pods_LYPasteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +48,10 @@
 		87DA4368281A770C00C85F7E /* LYBaseCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYBaseCollectionCell.xib; sourceTree = "<group>"; };
 		87DA436B281BCFE300C85F7E /* LYImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYImageCollectionCell.swift; sourceTree = "<group>"; };
 		87DA436C281BCFE300C85F7E /* LYImageCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYImageCollectionCell.xib; sourceTree = "<group>"; };
+		87DA4384281E5CA900C85F7E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		87DA438A281E6A7400C85F7E /* CallBackFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallBackFunctions.swift; sourceTree = "<group>"; };
+		87DA438B281E6A7400C85F7E /* Keylogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keylogger.swift; sourceTree = "<group>"; };
+		87DA4390281E7D2B00C85F7E /* pyLogger.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = pyLogger.py; sourceTree = "<group>"; };
 		A07E51B0C180BBBB2B9A0086 /* Pods-LYPasteSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.release.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.release.xcconfig"; sourceTree = "<group>"; };
 		BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYPasteSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8685E61835FF5B101900F8A /* Pods-LYPasteSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.debug.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -54,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87DA4385281E5CA900C85F7E /* IOKit.framework in Frameworks */,
 				EC83BF63428F21CB626EAC2D /* Pods_LYPasteSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +83,7 @@
 		8462BD4987BE2F2165864C6F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87DA4384281E5CA900C85F7E /* IOKit.framework */,
 				BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */,
 			);
 			name = Frameworks;
@@ -101,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				04E2A998281CFCF2002FA329 /* Info.plist */,
+				87DA438E281E7D2B00C85F7E /* sources */,
+				87DA437F281E5C4A00C85F7E /* Keylogger */,
 				871D433F2817C7E30041CBC7 /* base */,
 				871D432A28179B310041CBC7 /* AppDelegate.swift */,
 				871D432C28179B310041CBC7 /* ViewController.swift */,
@@ -161,6 +173,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		87DA437F281E5C4A00C85F7E /* Keylogger */ = {
+			isa = PBXGroup;
+			children = (
+				87DA438A281E6A7400C85F7E /* CallBackFunctions.swift */,
+				87DA438B281E6A7400C85F7E /* Keylogger.swift */,
+			);
+			path = Keylogger;
+			sourceTree = "<group>";
+		};
+		87DA438E281E7D2B00C85F7E /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				87DA438F281E7D2B00C85F7E /* py */,
+			);
+			path = sources;
+			sourceTree = "<group>";
+		};
+		87DA438F281E7D2B00C85F7E /* py */ = {
+			isa = PBXGroup;
+			children = (
+				87DA4390281E7D2B00C85F7E /* pyLogger.py */,
+			);
+			path = py;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,6 +232,7 @@
 				TargetAttributes = {
 					871D432628179B310041CBC7 = {
 						CreatedOnToolsVersion = 13.3.1;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -224,6 +262,7 @@
 				871D432F28179B330041CBC7 /* Assets.xcassets in Resources */,
 				87DA436A281A770C00C85F7E /* LYBaseCollectionCell.xib in Resources */,
 				87DA436E281BCFE300C85F7E /* LYImageCollectionCell.xib in Resources */,
+				87DA4391281E7D2B00C85F7E /* pyLogger.py in Resources */,
 				871D433228179B330041CBC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,11 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87DA438C281E6A7400C85F7E /* CallBackFunctions.swift in Sources */,
 				871D43482817C7E30041CBC7 /* TestTableModel.swift in Sources */,
 				87DA4369281A770C00C85F7E /* LYBaseCollectionCell.swift in Sources */,
 				87DA436D281BCFE300C85F7E /* LYImageCollectionCell.swift in Sources */,
 				04E2A99C281CFE15002FA329 /* EventMonitor.swift in Sources */,
 				04E2A99A281CFDC8002FA329 /* StatusBarController.swift in Sources */,
+				87DA438D281E6A7400C85F7E /* Keylogger.swift in Sources */,
 				8705661128192E4D00692726 /* LYPasteListView.swift in Sources */,
 				871D432D28179B310041CBC7 /* ViewController.swift in Sources */,
 				871D432B28179B310041CBC7 /* AppDelegate.swift in Sources */,
