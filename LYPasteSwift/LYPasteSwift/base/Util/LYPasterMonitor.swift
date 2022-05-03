@@ -143,7 +143,7 @@ extension LYPasterMonitor{
             } catch let error {
                 debugPrint("update paste rtf error \(error.localizedDescription)")
             }
-        }else if model.type == pastTypeImage{
+        }else if model.type == pastTypeImage || model.type == pastTypeImageTIFF{
             do {
                 let data = try Data.init(contentsOf: URL.init(fileURLWithPath: model.file_path ?? ""))
                 success = paste.setData(data, forType: .png)
