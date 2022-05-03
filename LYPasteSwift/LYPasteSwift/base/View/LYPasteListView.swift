@@ -40,8 +40,11 @@ class LYPasteListView: NSView,LYBlock {
             collectionView.dataSource = self
             collectionView.collectionViewLayout  = flowlayout
             collectionView.register(NSCollectionViewItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "cell"))
-            collectionView.register(LYBaseCollectionCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"))
-            collectionView.register(LYImageCollectionCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "imagecell"))
+            collectionView.register(LYPasteBaseCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"))
+            collectionView.register(LYPasteRTFCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "rtfcell"))
+            collectionView.register(LYPasteTextCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "textcell"))
+            collectionView.register(LYPasteImageCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "imagecell"))
+            collectionView.register(LYPasteImageCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "tiffcell"))
             self.scrollView.documentView = collectionView
             collectionView.wantsLayer = true
             collectionView.layer?.backgroundColor = NSColor.gray.cgColor
@@ -51,6 +54,7 @@ class LYPasteListView: NSView,LYBlock {
     var scrollView:NSScrollView{
         get{
             let sview = NSScrollView.init(frame: self.bounds)
+            sview.hasHorizontalScroller = false
             self.addSubview(sview)
             sview.mas_makeConstraints { make in
                 make?.edges.equalTo()(self)
@@ -70,7 +74,7 @@ class LYPasteListView: NSView,LYBlock {
 }
 extension LYPasteListView:NSCollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
-        return NSSize.init(width: 150, height: 250)
+        return NSSize.init(width: 270, height: 290)
     }
 }
 extension LYPasteListView:NSCollectionViewDataSource {
@@ -79,21 +83,12 @@ extension LYPasteListView:NSCollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-        let cell : NSCollectionViewItem
         let model = dataList[indexPath.item]
-        if model.type == pastTypeImage{
-           let imageCell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "imagecell"), for: indexPath) as! LYImageCollectionCell
-            imageCell.model = model
-//            imageCell.block
-            cell = imageCell
-        }else{
-           let baseCell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"), for: indexPath) as! LYBaseCollectionCell
-            baseCell.model = model
-            weak var weak_self = self
-            baseCell.modelBlock = { smodel in
-                weak_self?.clickCell(smodel)
-            }
-            cell = baseCell
+        let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: model.cellId()), for: indexPath) as! LYPasteBaseCell
+        cell.model = model
+        weak var weak_self = self
+        cell.modelBlock = { smodel in
+            weak_self?.clickCell(smodel)
         }
         return cell
     }

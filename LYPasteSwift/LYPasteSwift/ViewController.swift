@@ -33,7 +33,7 @@ class ViewController: NSViewController {
 //        do{
 ////            let text = try String.init(contentsOfFile: path, encoding: .utf8)
 ////            textView.string = text
-//            let dd = try Data.init(contentsOf: URL.init(fileURLWithPath: path))
+//            let dd = try Data.init(contentsOf: URL.init(fileURLWithPath: path))/Users/liukuiqing/Downloads/iOSAssetExtractor.html
 ////            textView.attributedString = NSAttributedString.init(rtf: dd, documentAttributes: nil)
 //            textView.readRTFD(fromFile: path)
 //        } catch let lerror {
@@ -41,7 +41,7 @@ class ViewController: NSViewController {
 //        }
         // Do any additional setup after loading the view.
         
-        StatusBarController.init()
+//        StatusBarController.init()
     }
 
     override var representedObject: Any? {

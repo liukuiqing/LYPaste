@@ -11,6 +11,7 @@ import WCDBSwift
 let pastTypeText        = "pastText"
 let pastTypeRtf         = "pastTextRtf"
 let pastTypeImage       = "pastTextImage"
+let pastTypeImageTIFF   = "pastTextImageTiff" ///标签图像文件格式
 let pastTypeFilePath    = "pastFilePath"
 
 class TestTableModel: TableCodable  {
@@ -53,6 +54,21 @@ class TestTableModel: TableCodable  {
             return [
                 "_index": IndexBinding(indexesBy: identifier)
             ]
+        }
+    }
+    func cellId() -> String {
+        switch type{
+        case pastTypeText:
+            return "textcell"
+        case pastTypeRtf:
+            return "rtfcell"
+        case pastTypeImage:
+            return "imagecell"
+        case pastTypeImageTIFF:
+            return "tiffcell"
+//            return "imagecell"
+        default:
+            return "basecell"
         }
     }
 }

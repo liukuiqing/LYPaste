@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusBar = StatusBarController.init()
+        LYPasterMonitor.shareInstance()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

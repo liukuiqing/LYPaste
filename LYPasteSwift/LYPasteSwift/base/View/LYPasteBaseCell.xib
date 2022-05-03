@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LYPasteBaseCell" customModule="LYPasteSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomView" destination="LQN-BB-sen" id="1zg-HQ-dVl"/>
+                <outlet property="dateLab" destination="fSW-yx-oLi" id="Icf-m6-fU6"/>
+                <outlet property="rightIconView" destination="bag-zN-Hye" id="tZ0-sk-bAU"/>
+                <outlet property="typeLab" destination="HA5-OJ-PnY" id="mz9-4F-oAe"/>
+                <outlet property="unknowLab" destination="elL-LG-P8F" id="mlg-TX-EfK"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="8x2-xX-VyQ">
+                    <rect key="frame" x="0.0" y="212" width="480" height="60"/>
+                    <subviews>
+                        <colorWell bordered="NO" continuous="NO" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AML-DL-GZ5">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="60"/>
+                            <color key="color" red="0.0" green="0.72549019609999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </colorWell>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HA5-OJ-PnY">
+                            <rect key="frame" x="12" y="29" width="45" height="21"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" placeholderString="类型" drawsBackground="YES" id="f9k-TH-NUD">
+                                <font key="font" metaFont="system" size="18"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </textFieldCell>
+                        </textField>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fSW-yx-oLi">
+                            <rect key="frame" x="10" y="11" width="31" height="16"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="日期" id="fid-RS-POu">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bag-zN-Hye">
+                            <rect key="frame" x="420" y="0.0" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="MEj-0v-kzx"/>
+                            </constraints>
+                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSAdvanced" id="K3i-G7-jL6"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="AML-DL-GZ5" firstAttribute="top" secondItem="8x2-xX-VyQ" secondAttribute="top" id="2Fe-fY-pES"/>
+                        <constraint firstAttribute="height" constant="60" id="33A-tt-dRa"/>
+                        <constraint firstItem="AML-DL-GZ5" firstAttribute="leading" secondItem="8x2-xX-VyQ" secondAttribute="leading" id="3Py-Uh-Fcw"/>
+                        <constraint firstAttribute="bottom" secondItem="AML-DL-GZ5" secondAttribute="bottom" id="57D-UW-gok"/>
+                        <constraint firstItem="bag-zN-Hye" firstAttribute="top" secondItem="8x2-xX-VyQ" secondAttribute="top" id="AEP-a6-ezc"/>
+                        <constraint firstAttribute="bottom" secondItem="bag-zN-Hye" secondAttribute="bottom" id="Aw0-l2-E0G"/>
+                        <constraint firstItem="fSW-yx-oLi" firstAttribute="leading" secondItem="8x2-xX-VyQ" secondAttribute="leading" constant="12" id="DEO-zL-kyj"/>
+                        <constraint firstItem="fSW-yx-oLi" firstAttribute="top" secondItem="HA5-OJ-PnY" secondAttribute="bottom" constant="2" id="PkC-se-Rlo"/>
+                        <constraint firstItem="HA5-OJ-PnY" firstAttribute="top" secondItem="8x2-xX-VyQ" secondAttribute="top" constant="10" id="WzF-fr-HKm"/>
+                        <constraint firstAttribute="trailing" secondItem="bag-zN-Hye" secondAttribute="trailing" id="msy-pH-lxw"/>
+                        <constraint firstItem="HA5-OJ-PnY" firstAttribute="leading" secondItem="8x2-xX-VyQ" secondAttribute="leading" constant="12" id="oqP-Cx-HIK"/>
+                        <constraint firstAttribute="trailing" secondItem="AML-DL-GZ5" secondAttribute="trailing" id="vnB-cI-duB"/>
+                    </constraints>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="LQN-BB-sen">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="212"/>
+                    <subviews>
+                        <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="elL-LG-P8F">
+                            <rect key="frame" x="201" y="93" width="79" height="26"/>
+                            <textFieldCell key="cell" lineBreakMode="clipping" title="unknow" placeholderString="unknow" id="OOq-m1-jJg">
+                                <font key="font" metaFont="system" size="22"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="elL-LG-P8F" firstAttribute="centerX" secondItem="LQN-BB-sen" secondAttribute="centerX" id="g3Q-jG-wzK"/>
+                        <constraint firstItem="elL-LG-P8F" firstAttribute="centerY" secondItem="LQN-BB-sen" secondAttribute="centerY" id="zaM-Gq-ddx"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="LQN-BB-sen" secondAttribute="trailing" id="1k2-8c-ajG"/>
+                <constraint firstAttribute="bottom" secondItem="LQN-BB-sen" secondAttribute="bottom" id="Lg3-XF-sqX"/>
+                <constraint firstItem="8x2-xX-VyQ" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="NhG-T4-3Cz"/>
+                <constraint firstAttribute="trailing" secondItem="8x2-xX-VyQ" secondAttribute="trailing" id="Q4T-j2-vkX"/>
+                <constraint firstItem="LQN-BB-sen" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="QYM-KS-Y0k"/>
+                <constraint firstItem="LQN-BB-sen" firstAttribute="top" secondItem="8x2-xX-VyQ" secondAttribute="bottom" id="U4S-tr-UDG"/>
+                <constraint firstItem="8x2-xX-VyQ" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="ZuP-id-Mfo"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="135"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSAdvanced" width="32" height="32"/>
+    </resources>
+</document>

@@ -61,7 +61,7 @@ class StatusBarController {
             view.layer = layer
             view.layer?.backgroundColor = NSColor.red.cgColor
             /// todo : 此处将显示的view赋值给contentView
-            let listview =  LYPasteListView.init(frame: NSRect.init(x: 0, y: 0, width: rect.width, height: rect.height))
+            let listview =  LYPasteListView.init(frame: NSRect.init(x: 0, y: 18, width: rect.width, height: 295))
 //            self.view.addSubview(listview)
 //            listview.mas_makeConstraints { make in
 //                make?.center.equalTo()(self.view)
@@ -133,16 +133,16 @@ extension StatusBarController{
                 if flags.contains(.control){
                     self.controlPress = true
                 }
-                print("other")
+//                print("other")
                 break
             }
             self.checkShowState()
-            print("flags \(flags) ")
+//            print("flags \(flags) ")
         }
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown,.rightMouseDown,.swipe]) { event in
             let flags = event.modifierFlags.intersection(NSEvent.ModifierFlags.deviceIndependentFlagsMask)
             self.hideWindow(self)
-            print("click \(flags) ")
+//            print("click \(flags) ")
         }
 //        NSEvent.addLocalMonitorForEvents(matching: [.keyDown,.keyUp]) { event in
 //            print("down")
