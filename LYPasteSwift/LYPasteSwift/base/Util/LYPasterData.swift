@@ -87,7 +87,7 @@ extension LYPasterData{
     func qureyFromDb<T: TableDecodable>(fromTable: String, cls cName: T.Type, where condition: Condition? = nil, orderBy orderList:[OrderBy]? = nil) -> [T]? {
         do {
             let allObjects: [T] = try (dataBase?.getObjects(fromTable: fromTable, where:condition, orderBy:orderList))!
-            debugPrint("\(allObjects)");
+//            debugPrint("\(allObjects)");
             return allObjects
         } catch let error {
             debugPrint("no data find \(error.localizedDescription)")

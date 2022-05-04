@@ -8,6 +8,8 @@
 import Cocoa
 
 class LYPasteBaseCell: NSCollectionViewItem {
+    @IBOutlet weak var bgView: NSView!
+    @IBOutlet weak var topView: NSView!
     @IBOutlet weak var typeLab: NSTextField!
     @IBOutlet weak var dateLab: NSTextField!
     @IBOutlet weak var bottomView: NSView!
@@ -21,7 +23,15 @@ class LYPasteBaseCell: NSCollectionViewItem {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        self.bgView.wantsLayer = true
+        self.bgView.layer?.masksToBounds = true
+        self.bgView.layer?.cornerRadius = 8
+//        41 42 47 0x292a2f
+        self.bgView.layer?.backgroundColor = NSColor.hex(hexRgba: 0x292a2f).cgColor
+
+        self.topView.wantsLayer = true
+        self.topView.layer?.backgroundColor = NSColor.hex(hexRgba: 0x00b9ff).cgColor
+
     }
     func updateUI() -> Void {
         switch model?.type {

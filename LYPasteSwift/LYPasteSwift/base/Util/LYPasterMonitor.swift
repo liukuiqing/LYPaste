@@ -26,6 +26,7 @@ class LYPasterMonitor: NSObject {
         super.init()
         self.pasteCount = paste.changeCount
         self.bind()
+//        创建数据文件夹
         let path = LYPasterMonitor.pasteRootPath()
         if FileManager.default.fileExists(atPath: path) == false{
             do {
