@@ -64,7 +64,7 @@ class LYPasterShowManager {
 //            window.orderFront(NSApplication.shared.windows.last)
 //            window.level = NSWindow.Level.init(rawValue: Int(CGWindowLevelForKey(CGWindowLevelKey.overlayWindow)))
             window.orderFront(window)
-            NSApplication.shared.runModal(for: window)
+//            NSApplication.shared.runModal(for: window)
 //            NSApp.setActivationPolicy(NSApplication.ActivationPolicy.accessory)
 //            window.beginSheet(window) { responseCode in
 //                debugPrint("\(responseCode)")
@@ -75,6 +75,7 @@ class LYPasterShowManager {
     public func hideWindow() {
         eventMonitor?.stop()
         self.window?.orderOut(self.window)
+        NSApplication.shared.stopModal()
         self.window = nil
     }
     

@@ -7,17 +7,25 @@
 
 import Foundation
 import AppKit
+import Cocoa
+import SwiftUI
 
 class StatusBarController {
     private var statusBar: NSStatusBar
     private var statusItem: NSStatusItem
     private var eventMonitor: EventMonitor?
     private var window: NSWindow?
-    
+    private var popover: NSPopover
+
     init() {
+        self.popover = NSPopover.init()
+        let contentView = LYPasterPopoverView()
+        popover.contentViewController = LYPasterPopoverController()
+        popover.contentSize = NSSize(width: 100, height: 360)
+        popover.contentViewController?.view = NSHostingView(rootView: contentView)
+
         statusBar = NSStatusBar.init()
         statusItem = statusBar.statusItem(withLength: 28.0)
-        
         if let statusBarButton = statusItem.button {
             statusBarButton.image = #imageLiteral(resourceName: "StatusBarIcon")
             statusBarButton.image?.size = NSSize(width: 18.0, height: 18.0)
@@ -26,15 +34,30 @@ class StatusBarController {
             statusBarButton.action = #selector(toggleWindow(sender:))
             statusBarButton.target = self
         }
-        
-//        eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown, .swipe, .beginGesture, .keyDown, .scrollWheel, .flagsChanged], handler: mouseEventHandler)
-//        self.bindEvent()
+        eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown], handler: mouseEventHandler)
     }
     
     @objc func toggleWindow(sender: AnyObject) {
-        LYPasterShowManager.instance.toggleWindow()
+        if !popover.isShown {
+            if let statusBarButton = statusItem.button {
+                popover.show(relativeTo: statusBarButton.bounds, of: statusBarButton, preferredEdge: NSRectEdge.maxY)
+                eventMonitor?.start()
+            }
+        }else {
+            hiddenPopover()
+        }
     }
-//    var commandPress = false
+    func mouseEventHandler(_ event: NSEvent?) {
+        hiddenPopover()
+    }
+    
+    public func hiddenPopover() {
+        if popover.isShown {
+            popover.performClose(nil)
+            eventMonitor?.stop()
+        }
+    }
+
     var controlPress = false
     var shiftPress = false
 }

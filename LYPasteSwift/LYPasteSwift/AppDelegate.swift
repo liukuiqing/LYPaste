@@ -10,7 +10,7 @@ import Cocoa
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var statusBar: StatusBarController?
+    public var statusBar: StatusBarController?
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusBar = StatusBarController.init()
