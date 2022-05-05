@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusBar = StatusBarController.init()
         LYPasterMonitor.shareInstance()
+        LYPasterHotKey.setupHotKey()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04B936DD28236ED800F0A39A /* Keycode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B936DC28236ED800F0A39A /* Keycode.swift */; };
+		04B936DF28236FEB00F0A39A /* LYPasterShowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B936DE28236FEB00F0A39A /* LYPasterShowManager.swift */; };
+		04B936E1282370BE00F0A39A /* LYPasterHotKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B936E0282370BE00F0A39A /* LYPasterHotKey.swift */; };
 		04E2A99A281CFDC8002FA329 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2A999281CFDC7002FA329 /* StatusBarController.swift */; };
 		04E2A99C281CFE15002FA329 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2A99B281CFE15002FA329 /* EventMonitor.swift */; };
 		8705661128192E4D00692726 /* LYPasteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705661028192E4D00692726 /* LYPasteListView.swift */; };
@@ -34,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04B936DC28236ED800F0A39A /* Keycode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keycode.swift; sourceTree = "<group>"; };
+		04B936DE28236FEB00F0A39A /* LYPasterShowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasterShowManager.swift; sourceTree = "<group>"; };
+		04B936E0282370BE00F0A39A /* LYPasterHotKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasterHotKey.swift; sourceTree = "<group>"; };
 		04E2A998281CFCF2002FA329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		04E2A999281CFDC7002FA329 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		04E2A99B281CFE15002FA329 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 				871D43422817C7E30041CBC7 /* tables */,
 				871D43442817C7E30041CBC7 /* LYPasterData.swift */,
 				04E2A99B281CFE15002FA329 /* EventMonitor.swift */,
+				04B936DE28236FEB00F0A39A /* LYPasterShowManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -190,6 +197,8 @@
 			children = (
 				87DA438A281E6A7400C85F7E /* CallBackFunctions.swift */,
 				87DA438B281E6A7400C85F7E /* Keylogger.swift */,
+				04B936DC28236ED800F0A39A /* Keycode.swift */,
+				04B936E0282370BE00F0A39A /* LYPasterHotKey.swift */,
 			);
 			path = Keylogger;
 			sourceTree = "<group>";
@@ -350,10 +359,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B936E1282370BE00F0A39A /* LYPasterHotKey.swift in Sources */,
 				87DA438C281E6A7400C85F7E /* CallBackFunctions.swift in Sources */,
 				871D43482817C7E30041CBC7 /* TestTableModel.swift in Sources */,
 				87DA43A02821216900C85F7E /* LYPasteTextCell.swift in Sources */,
 				87DA439C28211FEB00C85F7E /* LYPasteBaseCell.swift in Sources */,
+				04B936DD28236ED800F0A39A /* Keycode.swift in Sources */,
 				04E2A99C281CFE15002FA329 /* EventMonitor.swift in Sources */,
 				87DA43AB282162D100C85F7E /* LYPasteImageCell.swift in Sources */,
 				04E2A99A281CFDC8002FA329 /* StatusBarController.swift in Sources */,
@@ -365,6 +376,7 @@
 				87DA43B0282259A600C85F7E /* LYColor.swift in Sources */,
 				87DA43A82821409D00C85F7E /* LYPasteRTFCell.swift in Sources */,
 				871D43472817C7E30041CBC7 /* LYPasterMonitor.swift in Sources */,
+				04B936DF28236FEB00F0A39A /* LYPasterShowManager.swift in Sources */,
 				871D434A2817C7E30041CBC7 /* LYWCustomWebview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
