@@ -102,6 +102,7 @@ extension LYPasterMonitor{
         let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier)).rtf")
         if writData(data: data, path: filePath) {
             dbModel.file_path = filePath
+            dbModel.text = String.lyRtfData(data) ?? ""
             LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
         }else{
             print("rtf failed")
@@ -163,11 +164,11 @@ extension LYPasterMonitor{
         return tModel
         
     }
-    func writData(data data:Data,path filePath:String) -> Bool {
+    func writData(data data:Data?,path filePath:String) -> Bool {
         var success:Bool = false
         if data != nil && filePath.count > 0 {
             do {
-                try data.write(to: NSURL.fileURL(withPath: filePath))
+                try data!.write(to: NSURL.fileURL(withPath: filePath))
                 success = true
             } catch let lerror {
                 print("data write failed: \(lerror)")
@@ -176,6 +177,23 @@ extension LYPasterMonitor{
         return success
     }
 }
+
+extension String{
+    static func lyRtfData(_ data:Data?) -> String? {
+        var restr:String? = ""
+        if data == nil {
+            return restr
+        }
+        do {
+            let  reAtt = try NSAttributedString.init(rtf: data!, documentAttributes: nil);
+            restr=reAtt?.string
+        } catch let lerror {
+            print("data write failed: \(lerror)")
+        }
+        return restr
+    }
+}
+
 //extension LYPasterMonitor:NSPasteboardTypeOwner{
 //    func pasteboard(_ sender: NSPasteboard, provideDataForType type: NSPasteboard.PasteboardType) {
 //        print("\(type.rawValue)")
