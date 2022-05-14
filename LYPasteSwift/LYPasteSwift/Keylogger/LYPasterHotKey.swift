@@ -14,7 +14,8 @@ class LYPasterHotKey {
         let hotKeyId = EventHotKeyID(signature: UTGetOSTypeFromString("LYPaster" as CFString), id: 0)
         var carbonHotKey: EventHotKeyRef?
         let _ = RegisterEventHotKey(UInt32(Keycode.v),
-                                        UInt32(cmdKey) | UInt32(shiftKey),
+//                                    UInt32(cmdKey) | UInt32(shiftKey),
+                                    UInt32(cmdKey) | UInt32(optionKey),
                                         hotKeyId,
                                         GetEventDispatcherTarget(),
                                         0,
@@ -48,7 +49,7 @@ class LYPasterHotKey {
 
          switch GetEventKind(event) {
          case EventParamName(kEventHotKeyPressed):
-             debugPrint("sssssssssssssssssss")
+//             debugPrint("sssssssssssssssssss")
              LYPasterShowManager.instance.toggleWindow()
 
          default:

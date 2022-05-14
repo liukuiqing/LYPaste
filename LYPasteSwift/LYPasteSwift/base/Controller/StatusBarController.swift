@@ -64,43 +64,43 @@ class StatusBarController {
 //监听快捷键
 extension StatusBarController {
     func bindEvent() {
-        NSEvent.addGlobalMonitorForEvents(matching: [.keyUp, NSEvent.EventTypeMask.flagsChanged]) { event in
-            let flags = event.modifierFlags.intersection(NSEvent.ModifierFlags.deviceIndependentFlagsMask)
-            switch flags {
-//            case [.command]:
-//                self.commandPress = true
-            case [.shift]:
-                self.shiftPress = true
-//            case [.command,.shift]:
-//                self.commandPress = true
+//        NSEvent.addGlobalMonitorForEvents(matching: [.keyUp, NSEvent.EventTypeMask.flagsChanged]) { event in
+//            let flags = event.modifierFlags.intersection(NSEvent.ModifierFlags.deviceIndependentFlagsMask)
+//            switch flags {
+////            case [.command]:
+////                self.commandPress = true
+//            case [.shift]:
 //                self.shiftPress = true
-            case [.control]:
-                self.controlPress = true
-
-            case [.control, .shift]:
-                self.controlPress = true
-                self.shiftPress = true
-
-            case [NSEvent.ModifierFlags.init(rawValue: 0)]:
-//                self.commandPress = false
-                self.controlPress = false
-                self.shiftPress = false
-
-            default:
-                if flags.contains(.shift) {
-                    self.shiftPress = true
-                }
-                if flags.contains(.control) {
-                    self.controlPress = true
-                }
-//                print("other")
-                break
-            }
-            self.checkShowState()
-//            print("flags \(flags) ")
-        }
+////            case [.command,.shift]:
+////                self.commandPress = true
+////                self.shiftPress = true
+//            case [.control]:
+//                self.controlPress = true
+//
+//            case [.control, .shift]:
+//                self.controlPress = true
+//                self.shiftPress = true
+//
+//            case [NSEvent.ModifierFlags.init(rawValue: 0)]:
+////                self.commandPress = false
+//                self.controlPress = false
+//                self.shiftPress = false
+//
+//            default:
+//                if flags.contains(.shift) {
+//                    self.shiftPress = true
+//                }
+//                if flags.contains(.control) {
+//                    self.controlPress = true
+//                }
+////                print("other")
+//                break
+//            }
+//            self.checkShowState()
+////            print("flags \(flags) ")
+//        }
         NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown, .swipe]) { event in
-            let flags = event.modifierFlags.intersection(NSEvent.ModifierFlags.deviceIndependentFlagsMask)
+//            let flags = event.modifierFlags.intersection(NSEvent.ModifierFlags.deviceIndependentFlagsMask)
 //            self.hideWindow(self)
 //            print("click \(flags) ")
         }
@@ -129,9 +129,9 @@ extension StatusBarController {
 //            CGEvent.tapIsEnabled(tap: evetTap!)
 //            CFRunLoopRun()
 //        }
-        var d = Keylogger()
-        d.start()
-        funcPy()
+//        var d = Keylogger()
+//        d.start()
+//        funcPy()
     }
 
 //    @convention(c) func myCGEventCallback(proxy: CGEventTapProxy, type: CGEventType, event: CGEvent, refcon: UnsafeMutableRawPointer?) -> Unmanaged<CGEvent>? {
@@ -151,28 +151,28 @@ extension StatusBarController {
             }
         }
     }
-    func funcPy() {
-        let emailTask = Process.init();
-        let path = Bundle.main.path(forResource: "pyLogger.py", ofType: nil)
-        let pyStr = String.init(format: "python %@", path!)
-        //这个不好用
-        //    [emailTask setLaunchPath:@"/usr/bin/python"];
-        //    [emailTask setArguments:[NSArray arrayWithObjects:@"-x86_64",pyStr, nil]];
-//        emailTask setLaunchPath:@"/bin/bash"];
-        emailTask.launchPath = "/bin/bash"
-//        emailTask.launchPath = "/usr/bin/python3"
-        emailTask.arguments = ["-c", pyStr]
-        let pipe = Pipe.init()
-        emailTask.standardOutput = pipe
-        emailTask.standardError = pipe;
-        do {
-            emailTask.launch()
-            emailTask.waitUntilExit()
-        } catch  let error {
-            print("python error: \(error)")
-        }
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        let strReturnFromPython = String.init(data: data, encoding: .utf8)
-        NSLog("python log:%@", strReturnFromPython ?? "");
-    }
+//    func funcPy() {
+//        let emailTask = Process.init();
+//        let path = Bundle.main.path(forResource: "pyLogger.py", ofType: nil)
+//        let pyStr = String.init(format: "python %@", path!)
+//        //这个不好用
+//        //    [emailTask setLaunchPath:@"/usr/bin/python"];
+//        //    [emailTask setArguments:[NSArray arrayWithObjects:@"-x86_64",pyStr, nil]];
+////        emailTask setLaunchPath:@"/bin/bash"];
+//        emailTask.launchPath = "/bin/bash"
+////        emailTask.launchPath = "/usr/bin/python3"
+//        emailTask.arguments = ["-c", pyStr]
+//        let pipe = Pipe.init()
+//        emailTask.standardOutput = pipe
+//        emailTask.standardError = pipe;
+//        do {
+//            emailTask.launch()
+//            emailTask.waitUntilExit()
+//        } catch  let error {
+//            print("python error: \(error)")
+//        }
+//        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+//        let strReturnFromPython = String.init(data: data, encoding: .utf8)
+//        NSLog("python log:%@", strReturnFromPython ?? "");
+//    }
 }
