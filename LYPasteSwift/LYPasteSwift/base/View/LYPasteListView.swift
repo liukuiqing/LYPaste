@@ -10,11 +10,7 @@ import WCDBSwift
 
 class LYPasteListView: NSView,LYBlock {
     func voidBlock() {
-        var list = LYPasterData.instance.qureyFromDb(fromTable: TestTableModel.tabName, cls: TestTableModel.self) ?? []
-        if list.count>1 {
-            list = list.reversed()
-        }
-        _dataList = list
+        _dataList = LYPasterMonitor.shareInstance().getShowData()
         self.listView.reloadData()
     }
     var _dataList:[TestTableModel]?
@@ -34,7 +30,9 @@ class LYPasteListView: NSView,LYBlock {
         get{
             let flowlayout = NSCollectionViewFlowLayout.init()
             flowlayout.scrollDirection = .horizontal
-            
+            flowlayout.minimumLineSpacing = 20
+            flowlayout.minimumInteritemSpacing = 0
+            flowlayout.sectionInset = NSEdgeInsets.init(top: 0, left: 20, bottom: 0, right: 20)
             let collectionView = NSCollectionView.init(frame: self.bounds)
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -48,6 +46,7 @@ class LYPasteListView: NSView,LYBlock {
             self.scrollView.documentView = collectionView
             collectionView.wantsLayer = true
             collectionView.layer?.backgroundColor = NSColor.gray.cgColor
+            self.setupUI()
             return collectionView
         }
     }
@@ -57,7 +56,10 @@ class LYPasteListView: NSView,LYBlock {
             sview.hasHorizontalScroller = false
             self.addSubview(sview)
             sview.mas_makeConstraints { make in
-                make?.edges.equalTo()(self)
+                make?.top.equalTo()(self)?.offset()(40)
+                make?.left.equalTo()(self)
+                make?.bottom.equalTo()(self)
+                make?.right.equalTo()(self)
             }
             return sview
         }
@@ -70,6 +72,55 @@ class LYPasteListView: NSView,LYBlock {
 //        LYPasterData.instance.insertToDb(objects: [model], intoTable: TestTableModel.tabName)
         LYPasterMonitor.shareInstance().updateToPasteWithModel(model)
 //        voidBlock()
+    }
+    var searhF:NSSearchField?
+    func setupUI() {
+        if searhF == nil {
+            searhF = NSSearchField.init(frame: NSRect.init(x: 0, y: 0, width: 20, height: 20))
+            searhF?.placeholderString = "输入搜索关键字"
+            searhF?.delegate = self
+//            searhF?.bezelStyle = .roundedBezel
+//            searhF?.wantsLayer = true
+//            searhF?.layer?.masksToBounds = true
+//            searhF?.layer?.cornerRadius = 10
+//            searhF?.layer?.borderColor = CGColor.white
+//            searhF?.layer?.borderWidth = 1.0
+//            searhF?.userActivity
+            searhF?.isSelectable = true
+//            searhF?.isEnabled = true
+            searhF?.isEditable = true
+//            searhF?.isBordered = true
+//            searhF?.cell?.usesSingleLineMode = false
+//            searhF?.cell?.truncatesLastVisibleLine = false
+            self.addSubview(searhF!)
+            searhF?.mas_makeConstraints({ make in
+                make?.right.equalTo()(self.mas_right)?.offset()(-20)
+                make?.top.equalTo()(self.mas_top)?.offset()(15)
+                make?.size.mas_equalTo()(CGSize.init(width:100, height:20))
+            })
+        }
+    }
+    deinit {
+        print("listview deinit")
+        LYPasterMonitor.shareInstance().searhKey = nil
+    }
+}
+extension LYPasteListView:NSSearchFieldDelegate{
+    
+//}
+//extension LYPasteListView:NSTextFieldDelegate {
+    override func validateProposedFirstResponder(_ responder: NSResponder, for event: NSEvent?) -> Bool {
+        return true
+    }
+    func textField(_ textField: NSTextField, textView: NSTextView, shouldSelectCandidateAt index: Int) -> Bool {
+        return true
+    }
+    func controlTextDidChange(_ obj: Notification) {
+        print("\(searhF?.stringValue)")
+        LYPasterMonitor.shareInstance().searhKey = searhF?.stringValue
+    }
+    func control(_ control: NSControl, textShouldBeginEditing fieldEditor: NSText) -> Bool {
+        return true
     }
 }
 extension LYPasteListView:NSCollectionViewDelegateFlowLayout {

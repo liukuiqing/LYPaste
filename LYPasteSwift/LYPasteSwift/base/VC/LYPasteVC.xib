@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LYPasteVC" customModule="LYPasteSwift" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="LYPasteVC" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Zj-q5-ojg">
+                    <rect key="frame" x="192" y="126" width="96" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="CzK-wq-0oq"/>
+                        <constraint firstAttribute="width" constant="96" id="Qev-pB-7hh"/>
+                    </constraints>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="faffse" drawsBackground="YES" allowsEditingTextAttributes="YES" id="bVi-Eb-JzX">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <searchField wantsLayer="YES" verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvR-hD-HjD">
+                    <rect key="frame" x="192" y="240" width="96" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="JXu-zm-fKq"/>
+                        <constraint firstAttribute="width" constant="96" id="bwj-LE-W3n"/>
+                    </constraints>
+                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" usesSingleLineMode="YES" bezelStyle="round" id="ibC-Yw-bR9">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </searchFieldCell>
+                </searchField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="EvR-hD-HjD" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="10" id="AUn-2v-7XJ"/>
+                <constraint firstItem="5Zj-q5-ojg" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="O3b-EW-xhh"/>
+                <constraint firstItem="5Zj-q5-ojg" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="VKL-mv-6MJ"/>
+                <constraint firstItem="EvR-hD-HjD" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="n9d-fu-Lgc"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="136"/>
+        </customView>
+    </objects>
+</document>

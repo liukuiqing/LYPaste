@@ -14,8 +14,9 @@ protocol LYBlock {
 
 var _pasterMonitor:LYPasterMonitor = LYPasterMonitor()
 class LYPasterMonitor: NSObject {
-    var newPateFunc:LYBlock?
+    weak var newPateFunc: (LYBlock&AnyObject)? //要弱引用
     let paste = NSPasteboard.general
+    
     class func shareInstance() -> LYPasterMonitor {
         return _pasterMonitor
     }
@@ -44,6 +45,14 @@ class LYPasterMonitor: NSObject {
         return ["LYPasterMonitor"]
     }
     var pTime:Timer?
+//    粘贴数据
+    var originData:[TestTableModel]?
+    var showData:[TestTableModel]?
+    var searhKey:String?{
+        didSet{
+            self.perform(#selector(self.updateShowData), with: nil, afterDelay: 0.3)
+        }
+    }
 }
 //timer
 extension LYPasterMonitor{
@@ -87,7 +96,7 @@ extension LYPasterMonitor{
                     print("un parse :" + "\(type?.rawValue)")
                 }
             })
-            print(pasteCount)
+            print("paste count:\(pasteCount)")
             newPateFunc?.voidBlock()
         }
     }
@@ -175,6 +184,61 @@ extension LYPasterMonitor{
             }
         }
         return success
+    }
+}
+extension LYPasterMonitor{
+    func getShowData() -> [TestTableModel]? {
+        if originData == nil {
+            updateOriginData()
+        }
+        if showData == nil{
+            updateShowData()
+        }
+        return showData
+    }
+    @objc func updateShowData() {
+        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(updateShowData), object: nil)
+        if originData == nil {
+            updateOriginData()
+        }
+        if searhKey == nil || searhKey == "" {
+            showData = originData
+        }else{
+            showData = []
+            originData?.forEach({ tModel in
+                if (tModel.text.range(of: searhKey!) != nil) {
+                    showData?.append(tModel)
+                }
+            })
+        }
+        newPateFunc?.voidBlock()
+    }
+    func updateOriginData() -> [TestTableModel] {
+        var list = LYPasterData.instance.qureyFromDb(fromTable: TestTableModel.tabName, cls: TestTableModel.self) ?? []
+        if list.count>1 {
+            list = list.reversed()
+        }
+        originData = list
+        return originData ?? []
+    }
+    func delData(modelId:Int){
+        if originData != nil {
+            for (index,tModel) in originData!.enumerated() {
+                if (tModel.identifier == modelId) {
+                    originData?.remove(at: index)
+                    break
+                }
+            }
+        }
+        if showData != nil {
+            for (index,tModel) in showData!.enumerated() {
+                if (tModel.identifier == modelId) {
+                    showData?.remove(at: index)
+                    break
+                }
+            }
+        }
+        newPateFunc?.voidBlock()
     }
 }
 

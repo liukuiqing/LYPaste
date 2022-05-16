@@ -23,6 +23,8 @@
 		871D43482817C7E30041CBC7 /* TestTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D43432817C7E30041CBC7 /* TestTableModel.swift */; };
 		871D43492817C7E30041CBC7 /* LYPasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D43442817C7E30041CBC7 /* LYPasterData.swift */; };
 		871D434A2817C7E30041CBC7 /* LYWCustomWebview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D43462817C7E30041CBC7 /* LYWCustomWebview.swift */; };
+		87A11B202830CA0A00E5AB16 /* LYPasteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A11B1E2830CA0A00E5AB16 /* LYPasteVC.swift */; };
+		87A11B212830CA0A00E5AB16 /* LYPasteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A11B1F2830CA0A00E5AB16 /* LYPasteVC.xib */; };
 		87DA4385281E5CA900C85F7E /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87DA4384281E5CA900C85F7E /* IOKit.framework */; };
 		87DA438C281E6A7400C85F7E /* CallBackFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA438A281E6A7400C85F7E /* CallBackFunctions.swift */; };
 		87DA438D281E6A7400C85F7E /* Keylogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA438B281E6A7400C85F7E /* Keylogger.swift */; };
@@ -58,6 +60,8 @@
 		871D43432817C7E30041CBC7 /* TestTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableModel.swift; sourceTree = "<group>"; };
 		871D43442817C7E30041CBC7 /* LYPasterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPasterData.swift; sourceTree = "<group>"; };
 		871D43462817C7E30041CBC7 /* LYWCustomWebview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYWCustomWebview.swift; sourceTree = "<group>"; };
+		87A11B1E2830CA0A00E5AB16 /* LYPasteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasteVC.swift; sourceTree = "<group>"; };
+		87A11B1F2830CA0A00E5AB16 /* LYPasteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYPasteVC.xib; sourceTree = "<group>"; };
 		87DA4384281E5CA900C85F7E /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		87DA438A281E6A7400C85F7E /* CallBackFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallBackFunctions.swift; sourceTree = "<group>"; };
 		87DA438B281E6A7400C85F7E /* Keylogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keylogger.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 				87DA437E281D584500C85F7E /* Controller */,
 				871D43402817C7E30041CBC7 /* Util */,
 				871D43452817C7E30041CBC7 /* View */,
+				87A11B1D2830C9D900E5AB16 /* VC */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -187,6 +192,15 @@
 				04B936E2282376A700F0A39A /* LYPasterPopoverView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		87A11B1D2830C9D900E5AB16 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				87A11B1E2830CA0A00E5AB16 /* LYPasteVC.swift */,
+				87A11B1F2830CA0A00E5AB16 /* LYPasteVC.xib */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		87DA437E281D584500C85F7E /* Controller */ = {
@@ -309,6 +323,7 @@
 			files = (
 				871D432F28179B330041CBC7 /* Assets.xcassets in Resources */,
 				87DA439D28211FEB00C85F7E /* LYPasteBaseCell.xib in Resources */,
+				87A11B212830CA0A00E5AB16 /* LYPasteVC.xib in Resources */,
 				87DA4396281F852600C85F7E /* Paste.aiff in Resources */,
 				87DA4391281E7D2B00C85F7E /* pyLogger.py in Resources */,
 				87DA4394281F84DB00C85F7E /* Copy.aiff in Resources */,
@@ -372,6 +387,7 @@
 				87DA439C28211FEB00C85F7E /* LYPasteBaseCell.swift in Sources */,
 				04B936DD28236ED800F0A39A /* Keycode.swift in Sources */,
 				04E2A99C281CFE15002FA329 /* EventMonitor.swift in Sources */,
+				87A11B202830CA0A00E5AB16 /* LYPasteVC.swift in Sources */,
 				87DA43AB282162D100C85F7E /* LYPasteImageCell.swift in Sources */,
 				04E2A99A281CFDC8002FA329 /* StatusBarController.swift in Sources */,
 				87DA438D281E6A7400C85F7E /* Keylogger.swift in Sources */,
