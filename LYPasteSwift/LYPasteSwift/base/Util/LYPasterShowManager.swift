@@ -86,7 +86,7 @@ class LYPasterShowManager {
         /// todo : 此处将显示的view赋值给contentView
         let listview =  LYPasteListView.init(frame: NSRect.init(x: 0, y: 18, width: rect.width, height: 295))
         window.contentView = listview
-        listview.listView.reloadData()
+        listview.voidBlock()
         LYPasterData.instance.createTable(table: TestTableModel.tabName, of: TestTableModel.self)
         LYPasterMonitor.shareInstance().newPateFunc = listview
         self.window = window
