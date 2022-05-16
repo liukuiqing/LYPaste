@@ -21,6 +21,7 @@ class LYPasterMonitor: NSObject {
         return _pasterMonitor
     }
     var pasteCount:Int = 0
+    var maxDataCount = 200 //最大记录数据量
     
     override init() {
         NSLog("LYPasterMonitor init")
@@ -76,36 +77,39 @@ extension LYPasterMonitor{
             //                    print("unknow:" + "\(type) -" + (paste.string(forType: type) ?? "null" ))
             //                }
             //            })
+            var pModel:TestTableModel?
             paste.pasteboardItems?.forEach({ item in
                 print("pasteboardItems count:"+"\(item.types.count)")
                 let type = item.types.first
                 switch type {
                 case NSPasteboard.PasteboardType.string:
-                    self.parseStringPasteItem(item: item, type: type!)
+                    pModel = parseStringPasteItem(item: item, type: type!)
                     break
                 case NSPasteboard.PasteboardType.rtf:
-                    self.parseRTFPasteItem(item: item, type: type!)
+                    pModel = parseRTFPasteItem(item: item, type: type!)
                     break
                 case NSPasteboard.PasteboardType.png:
-                    self.parseImagePasteItem(item: item, type: type!)
+                    pModel = parseImagePasteItem(item: item, type: type!)
                     break
                 case NSPasteboard.PasteboardType.tiff:
-                    self.parseTIFFImagePasteItem(item: item, type: type!)
+                    pModel = parseTIFFImagePasteItem(item: item, type: type!)
                     break
                 default :
                     print("un parse :" + "\(type?.rawValue)")
                 }
             })
             print("paste count:\(pasteCount)")
+            addNewModel(model: pModel)
             newPateFunc?.voidBlock()
         }
     }
-    func parseStringPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
+    func parseStringPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> TestTableModel? {
         let tModel = creatModel(withType: pastTypeText)
         tModel.text = item.string(forType: type) ?? ""
         LYPasterData.instance.insertToDb(objects: [tModel], intoTable: TestTableModel.tabName)
+        return tModel
     }
-    func parseRTFPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
+    func parseRTFPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> TestTableModel? {
         let dbModel = creatModel(withType: pastTypeRtf)
         let data = item.data(forType: type)!
         let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier)).rtf")
@@ -113,30 +117,36 @@ extension LYPasterMonitor{
             dbModel.file_path = filePath
             dbModel.text = String.lyRtfData(data) ?? ""
             LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
+            return dbModel
         }else{
             print("rtf failed")
+            return nil
         }
     }
-    func parseImagePasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
+    func parseImagePasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> TestTableModel? {
         let dbModel = creatModel(withType: pastTypeImage)
         let data = item.data(forType: type)!
         let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier)).png")
         if writData(data: data, path: filePath) {
             dbModel.file_path = filePath
             LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
+            return dbModel
         }else{
             print("image failed")
+            return nil
         }
     }
-    func parseTIFFImagePasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> Void {
+    func parseTIFFImagePasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> TestTableModel? {
         let dbModel = creatModel(withType: pastTypeImageTIFF)
         let data = item.data(forType: type)!
         let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier)).png")
         if writData(data: data, path: filePath) {
             dbModel.file_path = filePath
             LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
+            return dbModel
         }else{
             print("image tiff failed")
+            return nil
         }
     }
     class func pasteRootPath()->String{
@@ -221,10 +231,27 @@ extension LYPasterMonitor{
         originData = list
         return originData ?? []
     }
+    func addNewModel(model:TestTableModel?) {
+        if model == nil {
+            return
+        }
+        if originData == nil {
+            updateOriginData()
+        }
+        originData?.insert(model!, at: 0)
+        while (originData?.count ?? 0) > maxDataCount {
+            let delModel = originData?.last
+            LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == delModel!.identifier ?? 0)
+            originData?.removeLast()
+        }
+        updateShowData()
+    }
+    
     func delData(modelId:Int){
         if originData != nil {
             for (index,tModel) in originData!.enumerated() {
                 if (tModel.identifier == modelId) {
+                    LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == modelId)
                     originData?.remove(at: index)
                     break
                 }
