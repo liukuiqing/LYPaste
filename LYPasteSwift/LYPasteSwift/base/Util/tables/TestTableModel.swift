@@ -71,4 +71,34 @@ class TestTableModel: TableCodable  {
             return "basecell"
         }
     }
+    func deleteLocalData()->Bool {
+        LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == identifier ?? 0)
+        switch type{
+        case pastTypeText:
+            break
+        case pastTypeRtf:
+            return deletefile(localPath: file_path)
+            break
+        case pastTypeImage:
+            return deletefile(localPath: file_path)
+            break
+        case pastTypeImageTIFF:
+            return deletefile(localPath: file_path)
+            break
+        default:
+            break
+        }
+        return false
+    }
+}
+
+func deletefile(localPath:String?) -> Bool {
+    if localPath != nil && FileManager.default.fileExists(atPath: localPath!) {
+        do {
+            try FileManager.default.removeItem(at: URL.init(fileURLWithPath: localPath!))
+            return true
+        } catch let error {
+        }
+    }
+    return false
 }

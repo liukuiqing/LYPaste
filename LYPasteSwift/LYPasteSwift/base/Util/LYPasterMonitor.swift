@@ -236,12 +236,12 @@ extension LYPasterMonitor{
             return
         }
         if originData == nil {
-            updateOriginData()
+            let _ = updateOriginData()
         }
         originData?.insert(model!, at: 0)
         while (originData?.count ?? 0) > maxDataCount {
             let delModel = originData?.last
-            LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == delModel!.identifier ?? 0)
+            let _ = delModel?.deleteLocalData()
             originData?.removeLast()
         }
         updateShowData()
@@ -251,7 +251,7 @@ extension LYPasterMonitor{
         if originData != nil {
             for (index,tModel) in originData!.enumerated() {
                 if (tModel.identifier == modelId) {
-                    LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == modelId)
+                    let _ = tModel.deleteLocalData()
                     originData?.remove(at: index)
                     break
                 }
@@ -275,12 +275,8 @@ extension String{
         if data == nil {
             return restr
         }
-        do {
-            let  reAtt = try NSAttributedString.init(rtf: data!, documentAttributes: nil);
-            restr=reAtt?.string
-        } catch let lerror {
-            print("data write failed: \(lerror)")
-        }
+        let  reAtt = NSAttributedString.init(rtf: data!, documentAttributes: nil);
+        restr=reAtt?.string
         return restr
     }
 }
