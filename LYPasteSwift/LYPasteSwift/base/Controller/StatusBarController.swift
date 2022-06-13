@@ -36,20 +36,27 @@ class StatusBarController {
             
             statusBarButton.action = #selector(toggleWindow(sender:))
             statusBarButton.target = self
+            statusBarButton.sendAction(on: [.leftMouseDown,.rightMouseDown])
         }
         eventMonitor = EventMonitor(mask: [.leftMouseDown, .rightMouseDown], handler: mouseEventHandler)
     }
     
     @objc func toggleWindow(sender: AnyObject) {
-        if !popover.isShown {
-            if let statusBarButton = statusItem.button {
-                popover.show(relativeTo: statusBarButton.frame, of: statusBarButton, preferredEdge: NSRectEdge.maxY)
-                eventMonitor?.start()
-                LYPasterShowManager.instance.showWindow()
-            }
-        }else {
+        let btnMask = NSEvent.pressedMouseButtons
+        let lDown = ((btnMask & (1<<0)) != 0)
+//        var rDown = ((btnMask & (1<<0)) != 1)
+        if lDown{
+            LYPasterShowManager.instance.toggleWindow()
             hiddenPopover()
-            LYPasterShowManager.instance.hideWindow()
+        }else{
+            if !popover.isShown {
+                if let statusBarButton = statusItem.button {
+                    popover.show(relativeTo: statusBarButton.frame, of: statusBarButton, preferredEdge: NSRectEdge.maxY)
+                    eventMonitor?.start()
+                }
+            }else {
+                hiddenPopover()
+            }
         }
     }
     func mouseEventHandler(_ event: NSEvent?) {
