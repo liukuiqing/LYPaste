@@ -54,7 +54,7 @@ class LYPasteListView: NSView,LYBlock {
                 _listView = collectionView
                 self.scrollView.documentView = collectionView
                 collectionView.wantsLayer = true
-                collectionView.layer?.backgroundColor = NSColor.gray.cgColor
+                collectionView.layer?.backgroundColor = NSColor.clear.cgColor
                 self.setupUI()
             }
             return _listView!
