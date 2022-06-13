@@ -41,9 +41,9 @@ class LYPasteRTFCell: LYPasteTextCell {
     override func setupRtf() -> Void {
         let path = model?.file_path ?? ""
         do{
-            let dd = try Data.init(contentsOf: URL.init(fileURLWithPath: path))
+            let dd:Data? = try Data.init(contentsOf: URL.init(fileURLWithPath: path))
             if dd != nil {
-                strLab?.attributedStringValue = NSAttributedString.init(rtf: dd, documentAttributes: nil)!
+                strLab?.attributedStringValue = NSAttributedString.init(rtf: dd!, documentAttributes: nil)!
             }
 //            textView.readRTFD(fromFile: path)
         } catch let lerror {

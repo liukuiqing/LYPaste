@@ -36,7 +36,7 @@ class Keylogger
                 try FileManager.default.createDirectory(at: keyData, withIntermediateDirectories: false, attributes: nil)
                 try FileManager.default.createDirectory(at: devicesData, withIntermediateDirectories: false, attributes: nil)
             }
-            catch let eror
+            catch _
             {
                 print("Can't create directories!")
             }

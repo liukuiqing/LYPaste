@@ -75,16 +75,17 @@ class TestTableModel: TableCodable  {
         LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == identifier ?? 0)
         switch type{
         case pastTypeText:
-            break
+            return true
+//            break
         case pastTypeRtf:
             return deletefile(localPath: file_path)
-            break
+//            break
         case pastTypeImage:
             return deletefile(localPath: file_path)
-            break
+//            break
         case pastTypeImageTIFF:
             return deletefile(localPath: file_path)
-            break
+//            break
         default:
             break
         }
@@ -98,6 +99,7 @@ func deletefile(localPath:String?) -> Bool {
             try FileManager.default.removeItem(at: URL.init(fileURLWithPath: localPath!))
             return true
         } catch let error {
+            print("deletefile:failed:\(localPath ?? "") - \(error)")
         }
     }
     return false

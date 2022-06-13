@@ -30,11 +30,11 @@ class LYPasteImageCell: LYPasteBaseCell {
         typeLab.stringValue = "图片"
         dateLab.stringValue = model?.date ?? ""
         let path = model?.file_path ?? ""
-        do{
+//        do{
             imgView?.image = NSImage.init(contentsOf: URL.init(fileURLWithPath: path))
-        } catch let lerror {
-            print("str rtf failed: \(lerror)")
-        }
+//        } catch let lerror {
+//            print("str rtf failed: \(lerror)")
+//        }
     }
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
         let classStr:String = String("LYPasteBaseCell")

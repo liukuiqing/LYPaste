@@ -95,7 +95,7 @@ extension LYPasterMonitor{
                     pModel = parseTIFFImagePasteItem(item: item, type: type!)
                     break
                 default :
-                    print("un parse :" + "\(type?.rawValue)")
+                    print("un parse :" + "\(type?.rawValue ?? "")")
                 }
             })
             print("paste count:\(pasteCount)")
@@ -106,7 +106,7 @@ extension LYPasterMonitor{
     func parseStringPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> TestTableModel? {
         let tModel = creatModel(withType: pastTypeText)
         tModel.text = item.string(forType: type) ?? ""
-        LYPasterData.instance.insertToDb(objects: [tModel], intoTable: TestTableModel.tabName)
+        let _ = LYPasterData.instance.insertToDb(objects: [tModel], intoTable: TestTableModel.tabName)
         return tModel
     }
     func parseRTFPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> TestTableModel? {
@@ -116,7 +116,7 @@ extension LYPasterMonitor{
         if writData(data: data, path: filePath) {
             dbModel.file_path = filePath
             dbModel.text = String.lyRtfData(data) ?? ""
-            LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
+            let _ = LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
             return dbModel
         }else{
             print("rtf failed")
@@ -129,7 +129,7 @@ extension LYPasterMonitor{
         let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier)).png")
         if writData(data: data, path: filePath) {
             dbModel.file_path = filePath
-            LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
+            let _ = LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
             return dbModel
         }else{
             print("image failed")
@@ -142,7 +142,7 @@ extension LYPasterMonitor{
         let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier)).png")
         if writData(data: data, path: filePath) {
             dbModel.file_path = filePath
-            LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
+            let _ = LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
             return dbModel
         }else{
             print("image tiff failed")
@@ -199,7 +199,7 @@ extension LYPasterMonitor{
 extension LYPasterMonitor{
     func getShowData() -> [TestTableModel]? {
         if originData == nil {
-            updateOriginData()
+            let _ = updateOriginData()
         }
         if showData == nil{
             updateShowData()
@@ -209,7 +209,7 @@ extension LYPasterMonitor{
     @objc func updateShowData() {
         NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(updateShowData), object: nil)
         if originData == nil {
-            updateOriginData()
+            let _ = updateOriginData()
         }
         if searhKey == nil || searhKey == "" {
             showData = originData

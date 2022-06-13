@@ -105,7 +105,7 @@ class LYPasteListView: NSView,LYBlock {
 //        model.identifier = Int(CACurrentMediaTime())
 //        model.date = "\(Date.init())"
 //        LYPasterData.instance.insertToDb(objects: [model], intoTable: TestTableModel.tabName)
-        LYPasterMonitor.shareInstance().updateToPasteWithModel(model)
+        let _ = LYPasterMonitor.shareInstance().updateToPasteWithModel(model)
 //        voidBlock()
     }
     var searhF:NSSearchField?
@@ -151,7 +151,7 @@ extension LYPasteListView:NSSearchFieldDelegate{
         return true
     }
     func controlTextDidChange(_ obj: Notification) {
-        print("\(searhF?.stringValue)")
+        print("\(searhF?.stringValue ?? "")")
         LYPasterMonitor.shareInstance().searhKey = searhF?.stringValue
     }
     func control(_ control: NSControl, textShouldBeginEditing fieldEditor: NSText) -> Bool {

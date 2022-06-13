@@ -16,7 +16,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LYPasterMonitor.shareInstance()
+        let _ = LYPasterMonitor.shareInstance()
         
 //        var lll:LYWCustomWebview = LYWCustomWebview()
 //        lll.frame = NSRect.init(x: 10, y: 200, width: 400, height: 600);
