@@ -66,7 +66,8 @@ class TestTableModel: TableCodable  {
             return "imagecell"
         case pastTypeImageTIFF:
             return "tiffcell"
-//            return "imagecell"
+        case pastTypeFilePath:
+            return "filepathcell"
         default:
             return "basecell"
         }
@@ -75,6 +76,8 @@ class TestTableModel: TableCodable  {
         LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == identifier ?? 0)
         switch type{
         case pastTypeText:
+            return true
+        case pastTypeFilePath:
             return true
 //            break
         case pastTypeRtf:

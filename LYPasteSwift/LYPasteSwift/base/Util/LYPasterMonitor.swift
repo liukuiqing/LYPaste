@@ -94,6 +94,9 @@ extension LYPasterMonitor{
                 case NSPasteboard.PasteboardType.tiff:
                     pModel = parseTIFFImagePasteItem(item: item, type: type!)
                     break
+                case NSPasteboard.PasteboardType.fileURL:
+                    pModel = parseFileUrlPasteItem(item: item, type: type!)
+                    break
                 default :
                     print("un parse :" + "\(type?.rawValue ?? "")")
                 }
@@ -149,6 +152,19 @@ extension LYPasterMonitor{
             return nil
         }
     }
+    func parseFileUrlPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> TestTableModel? {
+        let dbModel = creatModel(withType: pastTypeFilePath)
+        let fileurl = item.string(forType: type)!
+//        let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier)).png")
+//        if writData(data: data, path: filePath) {
+            dbModel.text = fileurl
+            let _ = LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
+            return dbModel
+//        }else{
+//            print("image tiff failed")
+//            return nil
+//        }
+    }
     class func pasteRootPath()->String{
         return NSHomeDirectory().appending("/paster_data")
     }
@@ -171,6 +187,10 @@ extension LYPasterMonitor{
             } catch let error {
                 debugPrint("update paste rtf error \(error.localizedDescription)")
             }
+        }else if model.type == pastTypeFilePath {
+            success = paste.setString(model.text, forType: .fileURL)
+//            let _ = paste.readFileContentsType(.fileURL, toFile: model.text)
+//            success = paste.setString(model.text, forType: .string)
         }
         return success
     }

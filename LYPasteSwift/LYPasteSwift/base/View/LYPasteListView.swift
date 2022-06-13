@@ -51,6 +51,7 @@ class LYPasteListView: NSView,LYBlock {
                 collectionView.register(LYPasteTextCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "textcell"))
                 collectionView.register(LYPasteImageCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "imagecell"))
                 collectionView.register(LYPasteImageCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "tiffcell"))
+                collectionView.register(LYPasteFilePathCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "filepathcell"))
                 _listView = collectionView
                 self.scrollView.documentView = collectionView
                 collectionView.wantsLayer = true
