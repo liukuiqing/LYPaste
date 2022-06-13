@@ -27,9 +27,12 @@ class StatusBarController {
         statusBar = NSStatusBar.init()
         statusItem = statusBar.statusItem(withLength: 28.0)
         if let statusBarButton = statusItem.button {
-            statusBarButton.image = #imageLiteral(resourceName: "StatusBarIcon")
+            statusBarButton.image = NSImage.init(named: "StatusBarIcon")
             statusBarButton.image?.size = NSSize(width: 18.0, height: 18.0)
             statusBarButton.image?.isTemplate = true
+            statusBarButton.alternateImage =  statusBarButton.image
+            statusBarButton.highlight(true)
+            statusBarButton.isTransparent = true
             
             statusBarButton.action = #selector(toggleWindow(sender:))
             statusBarButton.target = self
@@ -40,11 +43,13 @@ class StatusBarController {
     @objc func toggleWindow(sender: AnyObject) {
         if !popover.isShown {
             if let statusBarButton = statusItem.button {
-                popover.show(relativeTo: statusBarButton.bounds, of: statusBarButton, preferredEdge: NSRectEdge.maxY)
+                popover.show(relativeTo: statusBarButton.frame, of: statusBarButton, preferredEdge: NSRectEdge.maxY)
                 eventMonitor?.start()
+                LYPasterShowManager.instance.showWindow()
             }
         }else {
             hiddenPopover()
+            LYPasterShowManager.instance.hideWindow()
         }
     }
     func mouseEventHandler(_ event: NSEvent?) {

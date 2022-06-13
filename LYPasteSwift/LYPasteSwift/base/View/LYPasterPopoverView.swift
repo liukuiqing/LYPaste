@@ -10,23 +10,23 @@ import SwiftUI
 struct LYPasterPopoverView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
-            Button {
-                LYPasterShowManager.instance.showWindow()
-                (NSApplication.shared.delegate as? AppDelegate)?.statusBar?.hiddenPopover()
-            } label: {
-                Text("唤醒")
-                .font(.system(size: 15))
-                .foregroundColor(.white)
-            }
-            .buttonStyle(BorderlessButtonStyle())
-            .padding(.top, 20)
-            .padding(.bottom, 10)
-            Divider()
+//            Button {
+//                LYPasterShowManager.instance.showWindow()
+//                (NSApplication.shared.delegate as? AppDelegate)?.statusBar?.hiddenPopover()
+//            } label: {
+//                Text("唤醒")
+//                .font(.system(size: 15))
+//                .foregroundColor(.white)
+//            }
+//            .buttonStyle(BorderlessButtonStyle())
+//            .padding(.top, 20)
+//            .padding(.bottom, 10)
+//            Divider()
             Button(action: {
                 NSApplication.shared.terminate(self)
                 (NSApplication.shared.delegate as? AppDelegate)?.statusBar?.hiddenPopover()
             }) {
-                Text("关闭")
+                Text("退出")
                 .font(.system(size: 15))
                 .foregroundColor(.white)
             }
