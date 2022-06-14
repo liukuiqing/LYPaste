@@ -246,7 +246,10 @@ extension LYPasterMonitor{
     func updateOriginData() -> [TestTableModel] {
         var list = LYPasterData.instance.qureyFromDb(fromTable: TestTableModel.tabName, cls: TestTableModel.self) ?? []
         if list.count>1 {
-            list = list.reversed()
+//            list = list.reversed()
+            list = list.sorted(by: { t1, t2 in
+                return (t1.identifier ?? 0) > (t2.identifier ?? 0)
+            })
         }
         originData = list
         return originData ?? []
@@ -284,6 +287,18 @@ extension LYPasterMonitor{
                     break
                 }
             }
+        }
+        newPateFunc?.voidBlock()
+    }
+    func clearData(){
+        if originData != nil {
+            for (_,tModel) in originData!.enumerated() {
+                let _ = tModel.deleteLocalData()
+            }
+            originData?.removeAll()
+        }
+        if showData != nil {
+            showData?.removeAll()
         }
         newPateFunc?.voidBlock()
     }
