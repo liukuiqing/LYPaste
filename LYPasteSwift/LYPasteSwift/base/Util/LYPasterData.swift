@@ -76,8 +76,8 @@ extension LYPasterData{
     ///删除
     func deleteFromDb(fromTable: String, where condition: Condition? = nil) -> Void {
         do {
-//            try dataBase?.delete(fromTable: fromTable, where:condition)
-            try dataBase?.delete(fromTable: fromTable, where:TestTableModel.Properties.text == "22")
+            try dataBase?.delete(fromTable: fromTable, where:condition)
+//            try dataBase?.delete(fromTable: fromTable, where:TestTableModel.Properties.text == "22")
         } catch let error {
             debugPrint("delete error \(error.localizedDescription)")
         }
