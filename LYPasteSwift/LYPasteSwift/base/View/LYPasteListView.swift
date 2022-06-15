@@ -65,7 +65,7 @@ class LYPasteListView: NSView,LYBlock {
     var scrollView:NSScrollView{
         get{
             if _scrollView == nil {
-                _scrollView = NSScrollView.init(frame: self.bounds)
+                _scrollView = LYScrollView.init(frame: self.bounds)
                 _scrollView?.hasHorizontalScroller = false
                 self.addSubview(_scrollView!)
                 _scrollView!.mas_makeConstraints { make in
@@ -187,5 +187,19 @@ extension LYPasteListView:NSCollectionViewDataSource {
     }
     func collectionView(_ collectionView: NSCollectionView, canDragItemsAt indexPaths: Set<IndexPath>, with event: NSEvent) -> Bool {
         return true
+    }
+}
+
+class LYScrollView: NSScrollView {
+    override func scrollWheel(with event: NSEvent) {
+        let cframe = self.contentView.bounds
+        let ccX = cframe.origin.x
+        let ccW = cframe.size.width
+        let ccH = cframe.size.height
+        let maxSX = (self.documentView?.bounds.size.width ?? 0) - ccW
+        var scrollX = ccX + (event.deltaY * ccH)
+        scrollX = min(scrollX, maxSX)
+        scrollX = max(0, scrollX)
+        self.contentView.scroll(NSPoint.init(x: scrollX, y: 0))
     }
 }
