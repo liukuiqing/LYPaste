@@ -33,10 +33,10 @@ class LYPasterShowManager {
     func showPasteVC() {
         var rect = NSScreen.main?.frame ?? NSMakeRect(0, 0, 640, 480)
         rect = NSRect(x: 0, y: 0, width: rect.width, height: 350)
-        let window = NSWindow.init(contentRect: rect, styleMask: [.closable,.titled], backing: .buffered, defer: true , screen: NSScreen.main)
+        let window = LYPasterWindow.init(contentRect: rect, styleMask: [], backing: .buffered, defer: true, screen: NSScreen.main)
         window.backgroundColor = .windowBackgroundColor
-        window.level = NSWindow.Level.floating
-        window.isMovableByWindowBackground = true
+        window.level = NSWindow.Level.popUpMenu
+        window.isMovableByWindowBackground = false
         
         /// todo : 此处将显示的view赋值给contentView
         let listview =  LYPasteListView.init(frame: NSRect.init(x: 0, y: 18, width: rect.width, height: 295))
@@ -45,7 +45,7 @@ class LYPasterShowManager {
         LYPasterData.instance.createTable(table: TestTableModel.tabName, of: TestTableModel.self)
         LYPasterMonitor.shareInstance().newPateFunc = listview
         self.window = window
-        let wc:NSWindowController = NSWindowController.init(window:window)
+        let wc: NSWindowController = NSWindowController.init(window: window)
         wc.window?.contentView = listview
         wc.window?.makeKeyAndOrderFront(window)
         wc.showWindow(listview)

@@ -14,6 +14,7 @@
 		04B936E52823782300F0A39A /* LYPasterPopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B936E42823782300F0A39A /* LYPasterPopoverController.swift */; };
 		04E2A99A281CFDC8002FA329 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2A999281CFDC7002FA329 /* StatusBarController.swift */; };
 		04E2A99C281CFE15002FA329 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2A99B281CFE15002FA329 /* EventMonitor.swift */; };
+		04F8560028596659005C1684 /* LYPasterWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F855FF28596659005C1684 /* LYPasterWindow.swift */; };
 		8705661128192E4D00692726 /* LYPasteListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8705661028192E4D00692726 /* LYPasteListView.swift */; };
 		871D432B28179B310041CBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D432A28179B310041CBC7 /* AppDelegate.swift */; };
 		871D432D28179B310041CBC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D432C28179B310041CBC7 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 		04E2A998281CFCF2002FA329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		04E2A999281CFDC7002FA329 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		04E2A99B281CFE15002FA329 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		04F855FF28596659005C1684 /* LYPasterWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasterWindow.swift; sourceTree = "<group>"; };
 		8705661028192E4D00692726 /* LYPasteListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasteListView.swift; sourceTree = "<group>"; };
 		871D432728179B310041CBC7 /* LYPasteSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYPasteSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		871D432A28179B310041CBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				8752C23A285733C500036CFA /* LYPasteFilePathCell.swift */,
 				04B936E2282376A700F0A39A /* LYPasterPopoverView.swift */,
 				87EA1EAB28586F49009C903D /* LYAlertView.swift */,
+				04F855FF28596659005C1684 /* LYPasterWindow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				04B936DF28236FEB00F0A39A /* LYPasterShowManager.swift in Sources */,
 				04B936E3282376A700F0A39A /* LYPasterPopoverView.swift in Sources */,
 				871D434A2817C7E30041CBC7 /* LYWCustomWebview.swift in Sources */,
+				04F8560028596659005C1684 /* LYPasterWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
