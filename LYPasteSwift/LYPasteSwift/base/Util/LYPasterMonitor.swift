@@ -197,11 +197,11 @@ extension LYPasterMonitor{
     
     func creatModel(withType type:String) -> TestTableModel {
         let tModel = TestTableModel.init()
-        tModel.identifier = Int(CACurrentMediaTime())
+//        tModel.identifier = Int(CACurrentMediaTime())
+        tModel.identifier = Int(Date.timeIntervalSinceReferenceDate)
         tModel.date = "\(Date.init())"
         tModel.type = type
         return tModel
-        
     }
     func writData(data data:Data?,path filePath:String) -> Bool {
         var success:Bool = false
