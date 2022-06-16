@@ -31,6 +31,8 @@ class LYPasteBaseCell: NSCollectionViewItem {
 
         self.topView.wantsLayer = true
         self.topView.layer?.backgroundColor = NSColor.hex(hexRgba: 0x00b9ff).cgColor
+        
+        self.bottomView.wantsLayer = true
 
     }
     func updateUI() -> Void {

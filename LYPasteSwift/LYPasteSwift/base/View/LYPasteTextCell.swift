@@ -26,9 +26,12 @@ class LYPasteTextCell: LYPasteBaseCell {
         // Do view setup here.
     }
     override func updateUI() -> Void {
-        typeLab.stringValue = "文本"
         dateLab.stringValue = model?.date ?? ""
         setupStr()
+        self.bottomView.layer?.backgroundColor = model?.parseRGBColor().cgColor
+        if model != nil {        
+            typeLab.stringValue = model!.isColorStr ? "颜色" : "文本"
+        }
     }
     override func setupStr() -> Void {
         strLab?.stringValue = model?.text ?? ""

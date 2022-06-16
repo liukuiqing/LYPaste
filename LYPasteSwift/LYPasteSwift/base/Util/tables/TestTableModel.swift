@@ -94,6 +94,18 @@ class TestTableModel: TableCodable  {
         }
         return false
     }
+    var isColorStr = false
+    
+    func parseRGBColor()->NSColor {
+        if type == pastTypeText || type == pastTypeRtf {
+            if NSColor.isValidhexStr(hexRgbStr: self.text) {
+                isColorStr = true
+                return NSColor.hexStr(hexRgbStr: self.text)
+            }
+        }
+        isColorStr = false
+        return NSColor.clear
+    }
 }
 
 func deletefile(localPath:String?) -> Bool {

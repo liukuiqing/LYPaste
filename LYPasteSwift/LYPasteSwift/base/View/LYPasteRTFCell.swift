@@ -34,9 +34,12 @@ class LYPasteRTFCell: LYPasteTextCell {
         fatalError("init(coder:) has not been implemented")
     }
     override func updateUI() {
-        typeLab.stringValue = "文本"
         dateLab.stringValue = model?.date ?? ""
         setupRtf()
+        self.bottomView.layer?.backgroundColor = model?.parseRGBColor().cgColor
+        if model != nil {
+            typeLab.stringValue = model!.isColorStr ? "颜色" : "文本"
+        }
     }
     override func setupRtf() -> Void {
         let path = model?.file_path ?? ""
