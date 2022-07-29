@@ -24,17 +24,32 @@ class LYPasteTextCell: LYPasteBaseCell {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+//        strLab?.maximumNumberOfLines = 10
+//        strLab?.lineBreakMode = .byTruncatingTail ///和lines一起用会卡死
+//        strLab?.isAutomaticTextCompletionEnabled = true
     }
     override func updateUI() -> Void {
         dateLab.stringValue = model?.date ?? ""
         setupStr()
         self.bottomView.layer?.backgroundColor = model?.parseRGBColor().cgColor
-        if model != nil {        
-            typeLab.stringValue = model!.isColorStr ? "颜色" : "文本"
+        if model != nil {
+            if model!.isColorStr == true {
+                typeLab.stringValue =  "颜色"
+                subTypeLab.stringValue = "text"
+            }else{
+                typeLab.stringValue =  "文本"
+                subTypeLab.stringValue = "text"
+            }
         }
     }
     override func setupStr() -> Void {
-        strLab?.stringValue = model?.text ?? ""
+        let maxCount = 250
+        if model?.text.count ?? 0 > maxCount {
+            let strIndex = model!.text.index(model!.text.startIndex, offsetBy: maxCount)
+            strLab?.stringValue = model!.text.substring(to: strIndex) + "\n……"
+        }else{
+            strLab?.stringValue = model?.text ?? ""
+        }
     }
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
         let classStr:String = String("LYPasteBaseCell")

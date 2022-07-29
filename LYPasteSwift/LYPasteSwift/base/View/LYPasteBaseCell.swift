@@ -15,6 +15,7 @@ class LYPasteBaseCell: NSCollectionViewItem {
     @IBOutlet weak var bottomView: NSView!
     @IBOutlet weak var unknowLab: NSTextField!
     @IBOutlet weak var rightIconView: NSImageView!
+    @IBOutlet weak var subTypeLab: NSTextField!
     
     var model:TestTableModel?{
         didSet{
@@ -33,6 +34,9 @@ class LYPasteBaseCell: NSCollectionViewItem {
         self.topView.layer?.backgroundColor = NSColor.hex(hexRgba: 0x00b9ff).cgColor
         
         self.bottomView.wantsLayer = true
+        
+        self.subTypeLab.stringValue = ""
+        self.subTypeLab.wantsLayer = true
 
     }
     func updateUI() -> Void {

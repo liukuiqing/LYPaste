@@ -24,6 +24,7 @@ class LYPasteRTFCell: LYPasteTextCell {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        strLab?.maximumNumberOfLines = 10
     }
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
         let classStr:String = String("LYPasteBaseCell")
@@ -38,19 +39,29 @@ class LYPasteRTFCell: LYPasteTextCell {
         setupRtf()
         self.bottomView.layer?.backgroundColor = model?.parseRGBColor().cgColor
         if model != nil {
-            typeLab.stringValue = model!.isColorStr ? "颜色" : "文本"
+            if model!.isColorStr == true {
+                typeLab.stringValue =  "颜色"
+                subTypeLab.stringValue = "rtf"
+            }else{
+                typeLab.stringValue =  "文本"
+                subTypeLab.stringValue = "rtf"
+            }
         }
     }
     override func setupRtf() -> Void {
         let path = model?.file_path ?? ""
-        do{
-            let dd:Data? = try Data.init(contentsOf: URL.init(fileURLWithPath: path))
-            if dd != nil {
-                strLab?.attributedStringValue = NSAttributedString.init(rtf: dd!, documentAttributes: nil)!
+        DispatchQueue.global().async {
+            do{
+                let dd:Data? = try Data.init(contentsOf: URL.init(fileURLWithPath: path))
+                if dd != nil {
+                    DispatchQueue.main.async {
+                        self.strLab?.attributedStringValue = NSAttributedString.init(rtf: dd!, documentAttributes: nil)!
+                    }
+                }
+                //            textView.readRTFD(fromFile: path)
+            } catch let lerror {
+                print("rtf failed: \(lerror)")
             }
-//            textView.readRTFD(fromFile: path)
-        } catch let lerror {
-            print("rtf failed: \(lerror)")
         }
     }
     
