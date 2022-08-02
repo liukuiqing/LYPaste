@@ -50,6 +50,7 @@ class LYPasteRTFCell: LYPasteTextCell {
     }
     override func setupRtf() -> Void {
         let path = model?.file_path ?? ""
+        strLab?.stringValue = "加载中……"
         DispatchQueue.global().async {
             do{
                 let dd:Data? = try Data.init(contentsOf: URL.init(fileURLWithPath: path))
