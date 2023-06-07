@@ -197,9 +197,16 @@ class LYScrollView: NSScrollView {
         let ccW = cframe.size.width
         let ccH = cframe.size.height
         let maxSX = (self.documentView?.bounds.size.width ?? 0) - ccW
-        var scrollX = ccX + (event.deltaY * ccH)
+        var scrollX = 0.0
+        if abs(event.deltaY) == 0 && abs(event.deltaX) > 0 {
+            scrollX = ccX - (event.deltaX * ccH)
+        }else{
+            scrollX = ccX + (event.deltaY * ccH)
+        }
+
         scrollX = min(scrollX, maxSX)
         scrollX = max(0, scrollX)
+
         self.contentView.scroll(NSPoint.init(x: scrollX, y: 0))
     }
 }
