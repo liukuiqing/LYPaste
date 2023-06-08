@@ -45,6 +45,10 @@ class LYPasterMonitor: NSObject {
     func pasterList() -> Array<Any> {
         return ["LYPasterMonitor"]
     }
+    func removeModel(model: TestTableModel){
+        originData?.removeAll { $0 == model }
+    }
+    
     var pTime:Timer?
 //    粘贴数据
     var originData:[TestTableModel]?
@@ -203,7 +207,7 @@ extension LYPasterMonitor{
         tModel.type = type
         return tModel
     }
-    func writData(data data:Data?,path filePath:String) -> Bool {
+    func writData(data:Data?,path filePath:String) -> Bool {
         var success:Bool = false
         if data != nil && filePath.count > 0 {
             do {

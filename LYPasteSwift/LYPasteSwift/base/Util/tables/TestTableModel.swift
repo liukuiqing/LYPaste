@@ -14,7 +14,7 @@ let pastTypeImage       = "pastTextImage"
 let pastTypeImageTIFF   = "pastTextImageTiff" ///标签图像文件格式
 let pastTypeFilePath    = "pastFilePath"
 
-class TestTableModel: TableCodable  {
+class TestTableModel: TableCodable,Equatable  {
     
     static let tabName = "test_table"
     
@@ -106,6 +106,9 @@ class TestTableModel: TableCodable  {
         isColorStr = false
         return NSColor.clear
     }
+    static func == (lhs: TestTableModel, rhs: TestTableModel) -> Bool {
+         return lhs.identifier == rhs.identifier
+     }
 }
 
 func deletefile(localPath:String?) -> Bool {

@@ -103,9 +103,11 @@ class LYPasteListView: NSView,LYBlock {
     }
     func clickCell(_ model:TestTableModel) -> Void {
         LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == model.identifier ?? 0)
+        
 //        model.identifier = Int(CACurrentMediaTime())
 //        model.date = "\(Date.init())"
 //        LYPasterData.instance.insertToDb(objects: [model], intoTable: TestTableModel.tabName)
+        LYPasterMonitor.shareInstance().removeModel(model: model)
         let _ = LYPasterMonitor.shareInstance().updateToPasteWithModel(model)
 //        voidBlock()
     }
