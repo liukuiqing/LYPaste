@@ -8,9 +8,11 @@
 import Cocoa
 
 class LYPasteTextCell: LYPasteBaseCell {
-    var _strLab: NSTextField?
-    var strLab: NSTextField? {
-        get{
+//    var _strLab: NSTextField?
+    lazy var strLab: NSTextField? = {
+//        get
+//        {
+            var _strLab: NSTextField?
             if _strLab == nil {
                 _strLab = NSTextField.init()
                 self.bottomView.addSubview(_strLab!)
@@ -19,8 +21,8 @@ class LYPasteTextCell: LYPasteBaseCell {
                 }
             }
             return _strLab
-        }
-    }
+//        }
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

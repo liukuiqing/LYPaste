@@ -20,6 +20,14 @@ class LYPasterHotKey {
                                         GetEventDispatcherTarget(),
                                         0,
                                         &carbonHotKey)
+        
+        let escHotKeyId = EventHotKeyID(signature: UTGetOSTypeFromString("LYPaster_ESC" as CFString), id: 1)
+        let _ = RegisterEventHotKey(UInt32(Keycode.escape),
+                                    UInt32(kNullCharCode),
+                                    escHotKeyId,
+                                    GetEventDispatcherTarget(),
+                                    0,
+                                    &carbonHotKey)
         installHotKeyPressedEventHandler()
     }
     
@@ -47,14 +55,17 @@ class LYPasterHotKey {
 
          guard error == noErr else { return error }
 
-         switch GetEventKind(event) {
-         case EventParamName(kEventHotKeyPressed):
-//             debugPrint("sssssssssssssssssss")
-             LYPasterShowManager.instance.toggleWindow()
-
-         default:
-             assert(false, "Unknown event kind")
-         }
+        switch GetEventKind(event) {
+        case EventParamName(kEventHotKeyPressed):
+            if hotKeyId.id == 1{
+                LYPasterShowManager.instance.hideWindow()
+            }else{
+                LYPasterShowManager.instance.toggleWindow()
+            }
+            break
+        default:
+            assert(false, "Unknown event kind")
+        }
          return noErr
      }
 }
