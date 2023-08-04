@@ -10,6 +10,7 @@ import WCDBSwift
 
 let pastTypeText        = "pastText"
 let pastTypeRtf         = "pastTextRtf"
+let pastTypeHtml        = "pastTextHtml"
 let pastTypeImage       = "pastTextImage"
 let pastTypeImageTIFF   = "pastTextImageTiff" ///标签图像文件格式
 let pastTypeFilePath    = "pastFilePath"
@@ -62,6 +63,8 @@ class TestTableModel: TableCodable,Equatable  {
             return "textcell"
         case pastTypeRtf:
             return "rtfcell"
+        case pastTypeHtml:
+            return "htmlcell"
         case pastTypeImage:
             return "imagecell"
         case pastTypeImageTIFF:

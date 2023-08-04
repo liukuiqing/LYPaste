@@ -40,6 +40,7 @@
 		87DA43AB282162D100C85F7E /* LYPasteImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA43AA282162D100C85F7E /* LYPasteImageCell.swift */; };
 		87DA43B0282259A600C85F7E /* LYColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DA43AF282259A600C85F7E /* LYColor.swift */; };
 		87EA1EAC28586F49009C903D /* LYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA1EAB28586F49009C903D /* LYAlertView.swift */; };
+		87EA5ED42A7C9B1E00E2A58D /* LYPastePublicHtmlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87EA5ED32A7C9B1E00E2A58D /* LYPastePublicHtmlCell.swift */; };
 		EC83BF63428F21CB626EAC2D /* Pods_LYPasteSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,7 @@
 		87DA43AC282188A200C85F7E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		87DA43AF282259A600C85F7E /* LYColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYColor.swift; sourceTree = "<group>"; };
 		87EA1EAB28586F49009C903D /* LYAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYAlertView.swift; sourceTree = "<group>"; };
+		87EA5ED32A7C9B1E00E2A58D /* LYPastePublicHtmlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPastePublicHtmlCell.swift; sourceTree = "<group>"; };
 		A07E51B0C180BBBB2B9A0086 /* Pods-LYPasteSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.release.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.release.xcconfig"; sourceTree = "<group>"; };
 		BFD73AA9D4275E3FAB494296 /* Pods_LYPasteSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LYPasteSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8685E61835FF5B101900F8A /* Pods-LYPasteSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYPasteSwift.debug.xcconfig"; path = "Target Support Files/Pods-LYPasteSwift/Pods-LYPasteSwift.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				87DA439A28211FEB00C85F7E /* LYPasteBaseCell.swift */,
 				87DA439B28211FEB00C85F7E /* LYPasteBaseCell.xib */,
 				87DA43A62821409D00C85F7E /* LYPasteRTFCell.swift */,
+				87EA5ED32A7C9B1E00E2A58D /* LYPastePublicHtmlCell.swift */,
 				87DA439E2821216900C85F7E /* LYPasteTextCell.swift */,
 				87DA43AA282162D100C85F7E /* LYPasteImageCell.swift */,
 				8752C23A285733C500036CFA /* LYPasteFilePathCell.swift */,
@@ -391,6 +394,7 @@
 			files = (
 				04B936E1282370BE00F0A39A /* LYPasterHotKey.swift in Sources */,
 				87DA438C281E6A7400C85F7E /* CallBackFunctions.swift in Sources */,
+				87EA5ED42A7C9B1E00E2A58D /* LYPastePublicHtmlCell.swift in Sources */,
 				871D43482817C7E30041CBC7 /* TestTableModel.swift in Sources */,
 				87DA43A02821216900C85F7E /* LYPasteTextCell.swift in Sources */,
 				87EA1EAC28586F49009C903D /* LYAlertView.swift in Sources */,

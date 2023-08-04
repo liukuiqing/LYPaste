@@ -49,6 +49,7 @@ class LYPasteListView: NSView,LYBlock {
                 collectionView.register(LYPasteBaseCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "basecell"))
                 collectionView.register(LYPasteRTFCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "rtfcell"))
                 collectionView.register(LYPasteTextCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "textcell"))
+                collectionView.register(LYPastePublicHtmlCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "htmlcell"))
                 collectionView.register(LYPasteImageCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "imagecell"))
                 collectionView.register(LYPasteImageCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "tiffcell"))
                 collectionView.register(LYPasteFilePathCell.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier.init(rawValue: "filepathcell"))

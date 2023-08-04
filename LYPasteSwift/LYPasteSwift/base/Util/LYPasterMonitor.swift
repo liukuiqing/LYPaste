@@ -92,6 +92,9 @@ extension LYPasterMonitor{
                 case NSPasteboard.PasteboardType.rtf:
                     pModel = parseRTFPasteItem(item: item, type: type!)
                     break
+                case NSPasteboard.PasteboardType.html:
+                    pModel = parseHtmlPasteItem(item: item, type: type!)
+                    break
                 case NSPasteboard.PasteboardType.png:
                     pModel = parseImagePasteItem(item: item, type: type!)
                     break
@@ -120,6 +123,20 @@ extension LYPasterMonitor{
         let dbModel = creatModel(withType: pastTypeRtf)
         let data = item.data(forType: type)!
         let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier)).rtf")
+        if writData(data: data, path: filePath) {
+            dbModel.file_path = filePath
+            dbModel.text = String.lyRtfData(data) ?? ""
+            let _ = LYPasterData.instance.insertToDb(objects: [dbModel], intoTable: TestTableModel.tabName)
+            return dbModel
+        }else{
+            print("rtf failed")
+            return nil
+        }
+    }
+    func parseHtmlPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> TestTableModel? {
+        let dbModel = creatModel(withType: pastTypeHtml)
+        let data = item.data(forType: type)!
+        let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier))_html.txt")
         if writData(data: data, path: filePath) {
             dbModel.file_path = filePath
             dbModel.text = String.lyRtfData(data) ?? ""

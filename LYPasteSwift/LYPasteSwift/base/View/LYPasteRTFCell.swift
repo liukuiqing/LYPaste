@@ -56,7 +56,7 @@ class LYPasteRTFCell: LYPasteTextCell {
                 let dd:Data? = try Data.init(contentsOf: URL.init(fileURLWithPath: path))
                 if dd != nil {
                     DispatchQueue.main.async {
-                        self.strLab?.attributedStringValue = NSAttributedString.init(rtf: dd!, documentAttributes: nil)!
+                        self.strLab?.attributedStringValue = NSAttributedString.init(rtf: dd!, documentAttributes: nil) ?? NSAttributedString.init()
                     }
                 }
                 //            textView.readRTFD(fromFile: path)
