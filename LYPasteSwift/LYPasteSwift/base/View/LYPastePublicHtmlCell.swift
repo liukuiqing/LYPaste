@@ -8,6 +8,12 @@
 import Cocoa
 
 class LYPastePublicHtmlCell: LYPasteRTFCell {
+    override func updateUI() {
+        super.updateUI()
+        if model != nil {
+            subTypeLab.stringValue = "html"
+        }
+    }
     override func setupRtf() -> Void {
         let path = model?.file_path ?? ""
         strLab?.stringValue = "加载中……"

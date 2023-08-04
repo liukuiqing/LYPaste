@@ -75,6 +75,24 @@ class TestTableModel: TableCodable,Equatable  {
             return "basecell"
         }
     }
+    func pasteboardType() -> NSPasteboard.PasteboardType {
+        switch type{
+        case pastTypeText:
+            return .string
+        case pastTypeRtf:
+            return .rtf
+        case pastTypeHtml:
+            return .html
+        case pastTypeImage:
+            return .png
+        case pastTypeImageTIFF:
+            return .png
+        case pastTypeFilePath:
+            return .fileURL
+        default:
+            return .string
+        }
+    }
     func deleteLocalData()->Bool {
         LYPasterData.instance.deleteFromDb(fromTable: TestTableModel.tabName, where: TestTableModel.Properties.identifier == identifier ?? 0)
         switch type{

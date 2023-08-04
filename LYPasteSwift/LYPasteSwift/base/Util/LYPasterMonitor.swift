@@ -135,7 +135,7 @@ extension LYPasterMonitor{
     }
     func parseHtmlPasteItem(item:NSPasteboardItem,type : NSPasteboard.PasteboardType) -> TestTableModel? {
         let dbModel = creatModel(withType: pastTypeHtml)
-        let data = item.data(forType: type)!
+        let data = item.data(forType: type) ?? Data.init()
         let filePath = LYPasterMonitor.pasteRootPath().appending("/\(String(describing: dbModel.identifier))_html.txt")
         if writData(data: data, path: filePath) {
             dbModel.file_path = filePath
@@ -194,12 +194,26 @@ extension LYPasterMonitor{
         paste.clearContents()
         if model.type == pastTypeText {
             success = paste.setString(model.text, forType: .string)
-        }else if model.type == pastTypeRtf{
+        }else if model.type == pastTypeRtf {
             do {
                 let data = try Data.init(contentsOf: URL.init(fileURLWithPath: model.file_path ?? ""))
                 success = paste.setData(data, forType: .rtf)
             } catch let error {
-                debugPrint("update paste rtf error \(error.localizedDescription)")
+                debugPrint("update paste \(model.type) error \(error.localizedDescription)")
+            }
+        }else if model.type == pastTypeHtml{
+            do {
+                paste.declareTypes([.html], owner: nil)
+                let data = try Data.init(contentsOf: URL.init(fileURLWithPath: model.file_path ?? ""))
+                success = paste.setData(data, forType: .html)
+                let atr = NSAttributedString.init(html: data, documentAttributes:nil);
+                let rtfData = atr?.rtf(from: NSRange.init(location: 0, length: atr!.length))
+                success = success && paste.setData(rtfData, forType: .rtf)
+                success = success && paste.setString(atr?.string ?? "", forType: .string)
+//                let htmlStr = String(data: data, encoding: .utf8)
+//                success = paste.setString(htmlStr ?? "", forType: model.pasteboardType())
+            } catch let error {
+                debugPrint("update paste \(model.type) error \(error.localizedDescription)")
             }
         }else if model.type == pastTypeImage || model.type == pastTypeImageTIFF{
             do {
