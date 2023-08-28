@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import Carbon
 import WCDBSwift
 
 protocol LYBlock {
@@ -189,8 +190,48 @@ extension LYPasterMonitor{
     class func pasteRootPath()->String{
         return NSHomeDirectory().appending("/paster_data")
     }
+    func getSelectedText() -> String? {
+        let systemWideElement = AXUIElementCreateSystemWide()
+        var selectedTextValue: AnyObject?
+        let errorCode = AXUIElementCopyAttributeValue(systemWideElement, kAXFocusedUIElementAttribute as CFString, &selectedTextValue)
+        
+        if errorCode == .success {
+            let selectedTextElement = selectedTextValue as! AXUIElement
+            var selectedText: AnyObject?
+            let textErrorCode = AXUIElementCopyAttributeValue(selectedTextElement, kAXSelectedTextAttribute as CFString, &selectedText)
+            
+            if textErrorCode == .success, let selectedTextString = selectedText as? String {
+                return selectedTextString
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
+    }
+    
     func updateToPasteWithModel(_ model:TestTableModel) -> Bool {
         var success = false
+//        let tc = NSTextInputContext.current
+//        let ke = NSEvent.keyEvent(with: .keyDown, location: NSPoint.zero, modifierFlags: .command, timestamp: 0, windowNumber: 1, context: nil, characters: "", charactersIgnoringModifiers: "", isARepeat: false, keyCode:UInt16(kVK_ANSI_V))!
+//        let tcsucc = tc?.handleEvent(ke)
+//        if tcsucc == true {
+//            print("he succ")
+//        }else{
+//            print("he failed")
+//        }
+//        // 创建一个 AppleScript 对象
+//        let script = try! NSAppleScript(source: "tell application \"Finder\" to make new folder at \"~/Desktop\" with properties {name: \"My Folder\"}")
+//        var errorDict:NSDictionary?
+//        // 执行 AppleScript 对象
+//        let result = try! script?.executeAndReturnError(&errorDict)
+//        // 打印 result
+//        print("executeAppleEvent\(result)")
+        
+        let input = FileHandle.standardInput;
+        let str = String(data: input.availableData, encoding: .utf8)
+        print(str)
+        
         paste.clearContents()
         if model.type == pastTypeText {
             success = paste.setString(model.text, forType: .string)
