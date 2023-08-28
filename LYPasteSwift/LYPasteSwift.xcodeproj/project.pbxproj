@@ -24,6 +24,7 @@
 		871D43482817C7E30041CBC7 /* TestTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D43432817C7E30041CBC7 /* TestTableModel.swift */; };
 		871D43492817C7E30041CBC7 /* LYPasterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D43442817C7E30041CBC7 /* LYPasterData.swift */; };
 		871D434A2817C7E30041CBC7 /* LYWCustomWebview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871D43462817C7E30041CBC7 /* LYWCustomWebview.swift */; };
+		874ECEA22A9CB811005C9542 /* LYActivateKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874ECEA12A9CB811005C9542 /* LYActivateKeyManager.swift */; };
 		8752C23B285733C600036CFA /* LYPasteFilePathCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8752C23A285733C500036CFA /* LYPasteFilePathCell.swift */; };
 		87A11B202830CA0A00E5AB16 /* LYPasteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A11B1E2830CA0A00E5AB16 /* LYPasteVC.swift */; };
 		87A11B212830CA0A00E5AB16 /* LYPasteVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A11B1F2830CA0A00E5AB16 /* LYPasteVC.xib */; };
@@ -65,6 +66,7 @@
 		871D43432817C7E30041CBC7 /* TestTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableModel.swift; sourceTree = "<group>"; };
 		871D43442817C7E30041CBC7 /* LYPasterData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYPasterData.swift; sourceTree = "<group>"; };
 		871D43462817C7E30041CBC7 /* LYWCustomWebview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LYWCustomWebview.swift; sourceTree = "<group>"; };
+		874ECEA12A9CB811005C9542 /* LYActivateKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYActivateKeyManager.swift; sourceTree = "<group>"; };
 		8752C23A285733C500036CFA /* LYPasteFilePathCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasteFilePathCell.swift; sourceTree = "<group>"; };
 		87A11B1E2830CA0A00E5AB16 /* LYPasteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LYPasteVC.swift; sourceTree = "<group>"; };
 		87A11B1F2830CA0A00E5AB16 /* LYPasteVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LYPasteVC.xib; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				871D43442817C7E30041CBC7 /* LYPasterData.swift */,
 				04E2A99B281CFE15002FA329 /* EventMonitor.swift */,
 				04B936DE28236FEB00F0A39A /* LYPasterShowManager.swift */,
+				874ECEA12A9CB811005C9542 /* LYActivateKeyManager.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				8752C23B285733C600036CFA /* LYPasteFilePathCell.swift in Sources */,
 				871D43492817C7E30041CBC7 /* LYPasterData.swift in Sources */,
 				87DA43B0282259A600C85F7E /* LYColor.swift in Sources */,
+				874ECEA22A9CB811005C9542 /* LYActivateKeyManager.swift in Sources */,
 				87DA43A82821409D00C85F7E /* LYPasteRTFCell.swift in Sources */,
 				871D43472817C7E30041CBC7 /* LYPasterMonitor.swift in Sources */,
 				04B936DF28236FEB00F0A39A /* LYPasterShowManager.swift in Sources */,
